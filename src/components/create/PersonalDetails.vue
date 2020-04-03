@@ -1,29 +1,113 @@
 <template>
   <div class="container">
     <div class="row">
+
       <div class="col-10 offset-1 pt-3 mt-5 shadow">
+        <form>
+          <div class="form-row">
+            <div class="col-md-6 mb-3">
+              <label>İsim</label>
+              <input v-model="personalDetails.name" type="text" class="form-control" placeholder="İsmini girin"
+                     required>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Soyisim</label>
+              <input v-model="personalDetails.surname" type="text" class="form-control" placeholder="Soy isminizi girin"
+                     required>
+            </div>
 
-        <div class="card-body">
-          <h3 class="text-center m-3">Personal Details Component</h3>
-          <hr>
-          <div class="form-group">
-          <label>İsim</label>
-          <input v-model="personalDetails.name" type="text" class="form-control" placeholder=" Adınızı giriniz..">
-        </div>
-          <div class="form-group">
-            <label>Soy isim</label>
-            <input v-model="personalDetails.surname" type="text" class="form-control" placeholder="Soyadınızı giriniz..">
+            <div class="col-md-6 mb-3">
+              <label>Telefon</label>
+
+              <input v-model="personalDetails.phoneNumber" class="form-control" type="tel"
+                     placeholder="Telefon numaranızı girin">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Email</label>
+
+              <input v-model="personalDetails.email" class="form-control" type="email">
+
+            </div>
+
+            <div class="col-md-12 mb-3">
+              <label>Adres</label>
+              <input v-model="personalDetails.address" type="text" class="form-control">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label>Şehir</label>
+              <input v-model="personalDetails.city" type="text" class="form-control">
+            </div>
+
           </div>
+        </form>
+
+        <transition name="fade" mode="out-in">
+
+          <form class="" v-if="this.additionalInformationShow">
+            <div class="form-row">
+
+              <div class="form-group col-md-6">
+
+                <label>Doğum Tarihi</label><br>
+                <div class="float-left col-lg-4 ">
+                  <input v-model="birthdayValues.day" placeholder="Day" type="number" class="form-control">
+                </div>
+                <div class="float-left col-lg-4">
+                  <select class="form-control" v-model="birthdayValues.month">
+                    <option selected disabled>Month</option>
+                    <option
+                    v-for="month in birthdayValues.months"> {{month}}</option>
+                  </select>
+                </div>
+                <div class="float-left col-lg-4">
+                  <input :maxlength="4" v-model="birthdayValues.year" placeholder="Year" type="number" class="form-control">
+                </div>
+              </div>
+              <div class=" col-md-6 form-group">
+                <label>Doğum Yeri</label>
+                <input v-model="additionalInformation.placeOfBirth" type="text" class="form-control">
+              </div>
+              <div class="col-md-6 form-group">
+                <label>Sürücü Ehliyeti</label>
+                <select v-model="additionalInformation.drivingLicense" class="form-control">
+                  <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                </select>
+              </div>
+              <div class="col-md-6 form-group">
+                <label> Cinsiyet Seçiniz</label>
+                <select v-model="additionalInformation.gender" class="form-control">
+                  <option key="erkek">Erkek</option>
+                  <option key="kadin">Kadın</option>
+                </select>
+              </div>
+
+              <div class="form-group col-md-6">
+                <label>Medeni Durum</label>
+                <input v-model="additionalInformation.maritalStatus" type="text" class="form-control">
+              </div>
+              <div class="col-md-6 form-group">
+                <label>İnternet Sitesi</label>
+                <input v-model="additionalInformation.website" type="url" class="form-control">
+              </div>
+
+            </div>
 
 
-
-          <hr>
-          <button class="btn btn-primary" :disabled="saveEnabled" @click="saveProduct">Kaydet</button>
-        </div>
+          </form>
+        </transition>
+        <button @click="additionalInformationChange()"
+                class="btn btn-block mb-3 mt-3 btn-outline-secondary">Ek Bilgiler
+        </button>
       </div>
     </div>
 
-
+    <p class="text-center m-3 mt-5">
+      <button class="col-md-3 btn btn-lg btn-outline-dark">Devamke</button>
+    </p>
   </div>
 
 
@@ -34,6 +118,7 @@
 
     data() {
       return {
+        additionalInformationShow: false,
         personalDetails: {
           name: '',
           surname: '',
@@ -52,9 +137,48 @@
           maritalStatus: '',
           website: ''
 
+        },
+        birthdayValues: {
+          day: null,
+          year: null,
+          month: null,
+          months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
         }
 
       }
+    },
+    methods: {
+      additionalInformationChange() {
+        this.additionalInformationShow = !this.additionalInformationShow;
+      }
+    },
+    watch: {
+
+
+      "birthdayValues.day"() {
+
+        if ((this.birthdayValues.year != null && this.birthdayValues.month != null) && (this.birthdayValues.year.length == 4)) {
+            this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
+            this.birthdayValues.month + ' ' + this.birthdayValues.year;
+        }
+      }
+      ,
+      "birthdayValues.year"(value) {
+        if ((this.birthdayValues.day != null && this.birthdayValues.month != null) && (value.length == 4)) {
+            this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
+            this.birthdayValues.month + ' ' + this.birthdayValues.year;
+        }
+      }
+      ,
+      "birthdayValues.month"() {
+
+        if ((this.birthdayValues.year != null && this.birthdayValues.day != null) && (this.birthdayValues.year.length == 4)) {
+            this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
+            this.birthdayValues.month + ' ' + this.birthdayValues.year;
+
+        }
+      }
+      ,
     }
   }
 
@@ -63,5 +187,19 @@
 
 <style scoped>
 
+  .fade-enter {
+    opacity: 0;
+  }
 
+  .fade-enter-active {
+    transition: opacity .3s ease-out;
+  }
+
+  .fade-leave {
+  }
+
+  .fade-leave-active {
+    transition: opacity .3s ease-out;
+    opacity: 0;
+  }
 </style>
