@@ -13,14 +13,12 @@
             :class="{ 'is-active': isActive.italic() }"
             @click="commands.italic"
           >I
-            <icon name="italic"/>
           </button>
           <button
             class="btn btn-outline-dark"
             :class="{ 'is-active': isActive.underline() }"
             @click="commands.underline"
           >U
-            <icon name="underline"/>
           </button>
         </p>
 
@@ -40,7 +38,6 @@
 <script>
   import {Editor, EditorContent, EditorMenuBar} from 'tiptap'
   import {Bold, Italic, Underline} from 'tiptap-extensions'
-  import Icon from './icon/index'
 
   export default {
     components: {

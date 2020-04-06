@@ -9,8 +9,8 @@ new Vue({
 })
 
 
-import { Editor } from 'tiptap'
-import { Bold, Italic, Link, HardBreak, Heading } from 'tiptap-extensions'
+import {Editor} from 'tiptap'
+import {Bold, Italic, Link, HardBreak, Heading} from 'tiptap-extensions'
 
 const editor = new Editor({
   extensions: [
@@ -21,3 +21,5 @@ const editor = new Editor({
     new Heading()
   ],
 })
+
+

@@ -6,6 +6,7 @@
     </div>
     <app-profile @profile="personalHistory.profile=$event">
     </app-profile>
+    <app-education></app-education>
 
   </div>
 
@@ -13,10 +14,11 @@
 </template>
 <script>
   import Profile from './history_components/Profile'
-
+  import Education from "./history_components/Education";
   export default {
     components: {
-      appProfile: Profile
+      appProfile: Profile,
+      appEducation: Education
     },
     data() {
       return {
