@@ -4,6 +4,8 @@
     <transition name="fade" mode="out-in">
       <router-view></router-view>
     </transition>
+
+
     <app-footer></app-footer>
   </div>
 </template>
@@ -17,14 +19,14 @@
     name: 'app',
     components: {
       appHeader: Header,
-      appFooter: Footer
+      appFooter: Footer,
+
     },
     data() {
-      return {
-        msg: 'Welcome to Your Vue.js App'
-      }
+
     }
   }
+
 </script>
 
 <style>
