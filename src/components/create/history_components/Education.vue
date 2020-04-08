@@ -145,25 +145,42 @@
               this.education.end_date[i] = null;
             }
           }
+          if (this.isUpdate.status) {
+            this.educationList[this.isUpdate.index] = this.education;
+            this.formShow = false;
+            this.isUpdate = {
+              status: false,
+              index: null
+            };
+            this.setDefaultEducation();
+          } else {
+            this.educationList.push(this.education);
+            this.formShow = false;
+            this.setDefaultEducation();
+
+          }
         } else {
           alert("Lütfen Tüm Alanları Doldurunuz !!!!");
         }
 
-        if (this.isUpdate.status) {
-          this.educationList[this.isUpdate.index] = this.education;
-          this.formShow = false;
-          this.isUpdate = {
-            status: false,
-            index: null
-          }
-        } else {
-          this.educationList.push(this.education);
-          this.formShow = false;
-
-        }
 
       },
       addNewEducation() {
+        this.setDefaultEducation();
+        this.formShow = true;
+
+      }
+      ,
+      editEducation(index) {
+        this.education = this.educationList[index];
+        this.formShow = true;
+        this.isUpdate.status = true;
+        this.isUpdate.index = index;
+      },
+      destroyEducation(index) {
+        this.educationList.splice(index, 1);
+      },
+      setDefaultEducation() {
         this.education = {
           agree: null,
           city: null,
@@ -176,19 +193,7 @@
             month: 'Month',
             year: 'Year'
           },
-        }
-        this.formShow = true;
-
-      }
-      ,
-      editEducation(index) {
-        this.education = this.educationList[index];
-        this.formShow = true;
-        this.isUpdate.status = true;
-        this.isUpdate.index = index;
-      },
-      destroyEducation(index) {
-        this.educationList.pop(index);
+        };
       }
 
     }
