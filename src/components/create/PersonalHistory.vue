@@ -8,6 +8,7 @@
     </app-profile>
     <app-education></app-education>
     <app-language></app-language>
+    <app-hobby></app-hobby>
 
   </div>
 
@@ -17,12 +18,14 @@
   import Profile from './history_components/Profile'
   import Education from "./history_components/Education";
   import Language from "./history_components/Language";
+  import Hobby from "./history_components/Hobby";
 
   export default {
     components: {
       appProfile: Profile,
       appEducation: Education,
       appLanguage: Language,
+      appHobby: Hobby
 
     },
     data() {

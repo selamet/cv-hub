@@ -20,7 +20,7 @@
     components: {
       appHeader: Header,
       appFooter: Footer,
-      
+
     },
     data() {
 
