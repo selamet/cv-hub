@@ -9,6 +9,7 @@
     <app-education></app-education>
     <app-language></app-language>
     <app-hobby></app-hobby>
+    <app-ability></app-ability>
 
   </div>
 
@@ -19,13 +20,15 @@
   import Education from "./history_components/Education";
   import Language from "./history_components/Language";
   import Hobby from "./history_components/Hobby";
+  import Ability from "./history_components/Ability"
 
   export default {
     components: {
       appProfile: Profile,
       appEducation: Education,
       appLanguage: Language,
-      appHobby: Hobby
+      appHobby: Hobby,
+      appAbility: Ability
 
     },
     data() {
