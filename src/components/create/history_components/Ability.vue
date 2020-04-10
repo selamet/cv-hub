@@ -27,11 +27,8 @@
           <label>Seviye</label>
           <select v-model="ability.level" class="form-control ">
             <option disabled selected>Seç</option>
-            <option :value="uzman">Uzman</option>
-            <option :value="deneyimli">Deneyimli</option>
-            <option :value="yetenekli">Yetenekli</option>
-            <option :value="baslangic">Başlangıç</option>
-            <option :value="acemi">Acemi</option>
+            <option :value="key" v-for="(level,key) in abilityLevel">{{level}}</option>
+
 
           </select>
         </div>
@@ -58,6 +55,7 @@
   export default {
     data() {
       return {
+        abilityLevel: ['Acemi', 'Başlangıç', 'Yetenekli', 'Deneyimli', 'Uzman'],
         formShow: true,
         abilityList: [],
         ability: {
@@ -84,7 +82,12 @@
             /* update */
             this.abilityList[this.isUpdate.index] = this.ability;
             this.formShow = false;
-            this.setIsUpdateDefault();
+            this.isUpdate = {
+              status: false,
+              index: null
+            };
+            this.setDefaultAbility();
+
 
           } else {
             /* create */
@@ -104,19 +107,17 @@
         this.formShow = true
       },
       destroyAbility(index) {
-        this.abilityList.splice(index, 1)
+        this.abilityList.splice(index, 1);
       },
       editAbility(index) {
         this.ability = this.abilityList[index];
         this.formShow = true;
-        this.setIsUpdateDefault();
-      },
-      setIsUpdateDefault() {
         this.isUpdate = {
           status: true,
-          index: index
+          index: null
         }
-      }
+      },
+
     }
   }
 
