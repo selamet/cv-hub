@@ -55,12 +55,12 @@
 
 <script>
   export default {
-    data() {
+    ''() {
       return {
         formShow: true,
         languageList: [],
         language: {
-          name: null,
+          name: '',
           level: 'Seç',
         },
         isUpdate: {
@@ -71,7 +71,7 @@
     },
     methods: {
       addLanguage() {
-        let query = this.language.name != null && this.language.level != 'Seç';
+        let query = this.language.name.length > 0 && this.language.level != 'Seç';
         if (query) {
           if (this.isUpdate.status) {
             this.languageList[this.isUpdate.index] = this.language;
@@ -92,7 +92,7 @@
         }
       },
       destroyLanguage(index) {
-        this.languageList.splice(index,1);
+        this.languageList.splice(index, 1);
       },
       editLanguage(index) {
         this.language = this.languageList[index];
@@ -105,9 +105,9 @@
         this.formShow = true;
 
       },
-      setDefaultLanguage(){
+      setDefaultLanguage() {
         this.language = {
-          name: null,
+          name: '',
           level: 'Seç',
         };
       }

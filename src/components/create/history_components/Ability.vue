@@ -59,7 +59,7 @@
         formShow: true,
         abilityList: [],
         ability: {
-          name: null,
+          name: '',
           level: 'Seç'
         },
         isUpdate: {
@@ -71,12 +71,12 @@
     methods: {
       setDefaultAbility() {
         this.ability = {
-          name: null,
+          name: '',
           level: 'Seç'
         }
       },
       addAbility() {
-        let query = this.ability.name != null && this.ability.level != 'Seç';
+        let query = this.ability.name.length>0 && this.ability.level != 'Seç';
         if (query) {
           if (this.isUpdate.status) {
             /* update */

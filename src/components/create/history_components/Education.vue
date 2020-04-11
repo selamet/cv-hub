@@ -107,9 +107,9 @@
           index: null
         },
         education: {
-          agree: null,
-          city: null,
-          school: null,
+          agree: '',
+          city: '',
+          school: '',
           starter_date: {
             month: 'Month',
             year: 'Year'
@@ -128,7 +128,7 @@
         return Array(end - start + 1).fill().map((_, idx) => start + idx)
       },
       addEducation() {
-        let query = this.education.agree != null && this.education.city != null && this.education.school != null
+        let query = this.education.agree.length > 0 && this.education.city.length > 0 && this.education.school.length > 0
           && this.education.starter_date.month != 'Month' && this.education.starter_date.year != 'Year'
           && this.education.end_date.month != 'Month' && this.education.end_date.year != 'Year';
 
@@ -182,9 +182,9 @@
       },
       setDefaultEducation() {
         this.education = {
-          agree: null,
-          city: null,
-          school: null,
+          agree: '',
+          city: '',
+          school: '',
           starter_date: {
             month: 'Month',
             year: 'Year'

@@ -102,8 +102,8 @@
           index: null
         },
         course: {
-          name: null,
-          institution: null,
+          name: '',
+          institution: '',
           starter_date: {
             month: 'Month',
             year: 'Year'
@@ -122,7 +122,7 @@
         return Array(end - start + 1).fill().map((_, idx) => start + idx)
       },
       addCourse() {
-        let query = this.course.name != null && this.course.institution != null
+        let query = this.course.name.length > 0 && this.course.institution.length > 0
           && this.course.starter_date.month != 'Month' && this.course.starter_date.year != 'Year'
           && this.course.end_date.month != 'Month' && this.course.end_date.year != 'Year';
         console.log(this.course.name, this.course.institution, this.course.starter_date.month, this.course.starter_date.year, this.course.end_date.month, this.course.end_date.year)
@@ -171,8 +171,8 @@
       },
       setDefaultCourse() {
         this.course = {
-          agree: null,
-          city: null,
+          agree: '',
+          city: '',
           starter_date: {
             month: 'Month',
             year: 'Year'
