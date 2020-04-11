@@ -26,6 +26,24 @@ module.exports = {
         }
       },
       {
+        test: /\.(scss|sass)$/,
+        use: [
+          "to-string-loader",
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: false
+            }
+          },
+          {
+            loader: "sass-loader",
+              options: {
+                  sourceMap: false
+              }
+            }
+        ]
+      },
+      {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/

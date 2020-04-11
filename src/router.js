@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "./components/create/Home"
 import PersonalDetails from "./components/create/PersonalDetails"
 import PersonalHistory from "./components/create/PersonalHistory"
+import NotFound from "./components/notFound/NotFound"
 
 Vue.use(VueRouter);
 
