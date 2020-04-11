@@ -50,7 +50,7 @@
         formShow: true,
         hobbyList: [],
         hobby: {
-          name: null,
+          name: '',
         },
         isUpdate: {
           status: false,
@@ -61,14 +61,15 @@
     },
     methods: {
       addHobby() {
-        let query = this.hobby.name != null;
+        let query = this.hobby.name.length > 0;
         if (query) {
           if (this.isUpdate.status) {
-            this.hobbyList[this.isUpdate.index]=this.hobby;
+            this.hobbyList[this.isUpdate.index] = this.hobby;
             this.isUpdate = {
               status: false,
               index: null
             };
+            this.formShow = false;
             this.setDefaultHobby();
           } else {
             this.hobbyList.push(this.hobby);
@@ -82,7 +83,7 @@
       },
       setDefaultHobby() {
         this.hobby = {
-          name: null,
+          name: '',
         }
       },
       addNewHobby() {

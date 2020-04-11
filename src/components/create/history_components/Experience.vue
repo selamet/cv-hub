@@ -83,7 +83,8 @@
         <button @click="addExperience()" class="m-3 btn btn-outline-info">Kaydet</button>
       </p>
       <p>
-        <button @click="addNewExperience()" class="btn btn-outline-dark btn-block col-md-8 offset-md-2">Başka Bir İş Deneyimi
+        <button @click="addNewExperience()" class="btn btn-outline-dark btn-block col-md-8 offset-md-2">Başka Bir İş
+          Deneyimi
           Ekle
         </button>
       </p>
@@ -96,7 +97,7 @@
 
 <script>
   export default {
-    data() {
+    ''() {
       return {
         months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
         ,
@@ -106,9 +107,9 @@
           index: null
         },
         experience: {
-          jobTitle: null,
-          city: null,
-          employer: null,
+          jobTitle: '',
+          city: '',
+          employer: '',
           starter_date: {
             month: 'Month',
             year: 'Year'
@@ -127,7 +128,7 @@
         return Array(end - start + 1).fill().map((_, idx) => start + idx)
       },
       addExperience() {
-        let query = this.experience.jobTitle != null && this.experience.city != null && this.experience.employer != null
+        let query = this.experience.jobTitle.length > 0 && this.experience.city.length > 0 && this.experience.employer.length > 0
           && this.experience.starter_date.month != 'Month' && this.experience.starter_date.year != 'Year'
           && this.experience.end_date.month != 'Month' && this.experience.end_date.year != 'Year';
         if (query) {
@@ -175,9 +176,9 @@
       },
       setDefaultExperience() {
         this.experience = {
-          jobTitle: null,
-          city: null,
-          employer: null,
+          jobTitle: '',
+          city: '',
+          employer: '',
           starter_date: {
             month: 'Month',
             year: 'Year'

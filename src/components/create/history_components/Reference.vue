@@ -71,10 +71,10 @@
           index: null
         },
         reference: {
-          company: null,
-          person: null,
-          telephone: null,
-          email: null,
+          company: '',
+          person: '',
+          telephone: '',
+          email: '',
 
         },
         referenceList: [],
@@ -82,8 +82,8 @@
     },
     methods: {
       addReference() {
-        let query_1 = this.reference.company || this.reference.person;
-        let query_2 = this.reference.telephone || this.reference.email;
+        let query_1 = this.reference.company.length > 0 || this.reference.person.length > 0;
+        let query_2 = this.reference.telephone.length > 0 || this.reference.email.length > 0;
 
         if (query_1 && query_2) {
           if (this.isUpdate.status) {
@@ -124,10 +124,10 @@
       },
       setDefaultReference() {
         this.reference = {
-          company: null,
-          person: null,
-          telephone: null,
-          email: null,
+          company: '',
+          person: '',
+          telephone: '',
+          email: '',
 
         }
       },
