@@ -13,6 +13,8 @@
     <app-experience></app-experience>
     <app-reference></app-reference>
     <app-course></app-course>
+    <app-achievement></app-achievement>
+    <app-publication></app-publication>
   </div>
 
 
@@ -26,6 +28,8 @@
   import Experience from "./history_components/Experience";
   import Reference from "./history_components/Reference";
   import Course from "./history_components/Course";
+  import Achievement from "./history_components/Achievement";
+  import Publications from "./history_components/Publications";
 
   export default {
     components: {
@@ -37,6 +41,8 @@
       appExperience: Experience,
       appReference: Reference,
       appCourse: Course,
+      appAchievement: Achievement,
+      appPublication: Publications
 
     },
     data() {
