@@ -1,25 +1,27 @@
 <template>
   <div id="app">
-       <app-header></app-header>
+
+       <app-navigation></app-navigation>
+
        <transition name="fade" mode="out-in">
          <router-view></router-view>
        </transition>
 
-
        <app-footer></app-footer>
+
   </div>
 </template>
 
 <script>
 
   import Footer from "./components/shared/Footer"
-  import Header from "./components/shared/Header"
+  import Navigation from "./components/shared/Navigation"
 
   export default {
     name: 'app',
     components: {
-      appHeader: Header,
-      appFooter: Footer,
+      appNavigation: Navigation,
+      appFooter: Footer
 
     },
     data() {
@@ -29,10 +31,11 @@
 
 </script>
 
-<style>
+<style lang="scss">
   body {
     background-color: #fffdf9;
   }
+
 
   .fade-enter {
     opacity: 0;
