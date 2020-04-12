@@ -72,6 +72,11 @@
             </select>
           </div>
         </div>
+        <div class="col-md-12 mb-3">
+          <label>Açıklama</label>
+          <textarea v-model="education.content" class="form-control"
+                    required></textarea>
+        </div>
 
       </div>
     </form>

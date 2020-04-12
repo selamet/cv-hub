@@ -68,8 +68,13 @@
               <option :value="i" v-for="i in range(1960, 2021)">{{i}}</option>
             </select>
           </div>
-        </div>
 
+        </div>
+        <div class="col-md-12 mb-3">
+          <label>Açıklama</label>
+          <textarea v-model="course.content" class="form-control"
+                    required></textarea>
+        </div>
       </div>
     </form>
 
@@ -125,7 +130,7 @@
         let query = this.course.name.length > 0 && this.course.institution.length > 0
           && this.course.starter_date.month != 'Month' && this.course.starter_date.year != 'Year'
           && this.course.end_date.month != 'Month' && this.course.end_date.year != 'Year';
-        console.log(this.course.name, this.course.institution, this.course.starter_date.month, this.course.starter_date.year, this.course.end_date.month, this.course.end_date.year)
+
         if (query) {
           /* Tempalte üzerinde gösterirken bir filter yazılacak!!!!! */
           for (var i in this.course.starter_date) {

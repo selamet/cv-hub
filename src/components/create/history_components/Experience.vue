@@ -73,6 +73,11 @@
             </select>
           </div>
         </div>
+        <div class="col-md-12 mb-3">
+          <label>Açıklama</label>
+          <textarea v-model="experience.content" class="form-control"
+                    required></textarea>
+        </div>
 
       </div>
     </form>
@@ -97,7 +102,7 @@
 
 <script>
   export default {
-    ''() {
+    data() {
       return {
         months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
         ,
