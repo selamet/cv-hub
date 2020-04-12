@@ -12,17 +12,17 @@
       <div class="home-text-card home-text-card-a">
         <i class="fa fa-sliders"></i>
         <i class="fa fa-search"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima, quasi!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
       </div>
       <div class="home-text-card home-text-card-b">
         <i class="fa fa-user"></i>
         <i class="fa fa-tasks"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, sit.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
       </div>
       <div class="home-text-card home-text-card-c">
         <i class="fa fa-angle-double-down"></i>
         <i class="fa fa-download"></i>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, praesentium.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
       </div>
     </div>
 
@@ -119,7 +119,6 @@
         padding-bottom: 10px;
         font-size: 18px;
         letter-spacing: .2px;
-        opacity: 0.9;
         font-weight: 600;
         width: 100%;
         position: absolute;
@@ -138,20 +137,23 @@
         justify-content: center;
         align-items: center;
         margin-top: 35px;
+        background-color: #fff;
 
         i {
           //color: rgb(199,57,197);
           //color: linear-gradient(90deg, rgba(199,57,197,1) 0%, rgba(223,67,152,1) 51%, rgba(240,73,122,1) 100%);
           color: #5b7ff6;
           font-size: 30px;
-          padding:5px;
+          padding-top:10px;
+          padding-left: 5px;
+          padding-right: 5px;
         }
 
         p {
           text-align: center;
           color: #42425a;
-          letter-spacing: .5px;
-          opacity: 0.8;
+          letter-spacing: .6px;
+          line-height: 1.5;
           font-size: 14px;
         }
 
