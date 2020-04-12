@@ -1,86 +1,78 @@
 <template>
-  <div id="profile" class="col-10 offset-1 pt-3  mt-5 shadow ">
-    <h3 class=" page-header">Profile</h3>
-    <editor-menu-bar :editor="editor" v-slot="{ commands, isActive }">
-      <div class="menubar">
-        <p class="text-center">
 
-          <button class="btn btn-outline-dark" :class="{ 'is-active': isActive.bold() }" @click="commands.bold">
-            Bold
-          </button>
-          <button
-            class="btn btn-outline-dark "
-            :class="{ 'is-active': isActive.italic() }"
-            @click="commands.italic"
-          >I
-          </button>
-          <button
-            class="btn btn-outline-dark"
-            :class="{ 'is-active': isActive.underline() }"
-            @click="commands.underline"
-          >U
-          </button>
-        </p>
+  <div class="col-10 offset-1 pt-3  mt-5 shadow ">
+    <h3>Profil </h3>
 
-      </div>
-    </editor-menu-bar>
-    <div class="col-md-10 offset-md-1">
-      <editor-content id="editor_content" :editor="editor"/>
+
+    <div v-if="saveStatus && profile.content.length>0" class="show-course">
+      <ul class="list-group">
+        <li class="list-group-item">
+
+          <div class=" float-left">{{profile.content}}</div>
+          <div class=" float-right control-panel">
+            <button @click="editProfile()" class=" btn btn-outline-dar btn-sm">D</button>
+          </div>
+        </li>
+      </ul>
     </div>
 
+    <form v-if="formShow">
+      <div class="form-row">
+        <div class="col-md-12 mb-3">
+          <label>Açıklama</label>
+          <textarea v-model="profile.content" class="form-control"
+                    required></textarea>
+        </div>
 
-    <button @click="sendProfileValue()" class="float-right m-3 btn btn-outline btn-info">Kaydet</button>
 
+      </div>
+    </form>
+    <div id="buttons">
+      <p class="text-right">
+        <button class="m-3 btn btn-outline-danger">Sil</button>
+        <button @click="addProfile()" class="m-3 btn btn-outline-info">Kaydet</button>
+      </p>
 
+    </div>
   </div>
+
 </template>
 
-<script>
-  import {Editor, EditorContent, EditorMenuBar} from 'tiptap'
-  import {Bold, Italic, Underline} from 'tiptap-extensions'
 
+<script>
   export default {
-    components: {
-      EditorContent,
-      EditorMenuBar,
-    },
     data() {
       return {
-        profile: '',
-        editor: new Editor({
-          extensions: [
-            new Bold(),
-            new Underline(),
-            new Italic()
-          ],
-
-        }),
-
+        formShow: true,
+        saveStatus: false,
+        profile: {
+          content: '',
+        },
       }
     },
-
-
-    beforeDestroy() {
-      if (this.editor) this.editor.destroy();
-    },
     methods: {
-      sendProfileValue() {
-        this.profile = this.editor.getHTML();
-        this.$emit('profile', this.profile);
+      addProfile() {
+        let query = this.profile.content.length > 0;
+        if (query) {
+          this.saveStatus = true;
+          this.formShow = false;
+        } else {
+          alert('Lütfen Tüm Alanları Doldurduğunuzdan Emin Olun!!!');
+        }
+      },
+
+
+      editProfile() {
+        this.formShow = true;
+        this.saveStatus = false;
+
       }
     }
 
   }
+
 </script>
 
 <style scoped>
-
-  #profile {
-    height: 300px;
-  }
-
-  #editor_content {
-    border: 1px solid #f2f2
-  }
 
 </style>

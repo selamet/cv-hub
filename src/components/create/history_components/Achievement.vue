@@ -84,7 +84,7 @@
       },
       setDefaultAchievement() {
         this.achievement = {
-          content: null,
+          content: '',
         }
       },
       addNewAchievement() {
