@@ -56,11 +56,13 @@
                   <select class="form-control" v-model="birthdayValues.month">
                     <option selected disabled>Month</option>
                     <option
-                    v-for="month in birthdayValues.months"> {{month}}</option>
+                      v-for="month in birthdayValues.months"> {{month}}
+                    </option>
                   </select>
                 </div>
                 <div class="float-left col-lg-4">
-                  <input :maxlength="4" v-model="birthdayValues.year" placeholder="Year" type="number" class="form-control">
+                  <input :maxlength="4" v-model="birthdayValues.year" placeholder="Year" type="number"
+                         class="form-control">
                 </div>
               </div>
               <div class=" col-md-6 form-group">
@@ -106,7 +108,9 @@
     </div>
 
     <p class="text-center m-3 mt-5">
-      <button class="col-md-3 btn btn-lg btn-outline-dark">Devamke</button>
+      {{lorem.name}}
+      <button @click="a" class="col-md-3 btn btn-lg btn-outline-dark">Devamke
+      </button>
     </p>
   </div>
 
@@ -114,6 +118,8 @@
 </template>
 
 <script>
+  import {mapMutations, mapActions} from "vuex";
+
   export default {
 
     data() {
@@ -148,6 +154,14 @@
       }
     },
     methods: {
+      ...mapMutations([
+          'setPersonalDetails',
+        ]
+      ),
+      a() {
+        this.setPersonalDetails(this.personalDetails);
+      },
+
       additionalInformationChange() {
         this.additionalInformationShow = !this.additionalInformationShow;
       }
@@ -158,14 +172,14 @@
       "birthdayValues.day"() {
 
         if ((this.birthdayValues.year != null && this.birthdayValues.month != null) && (this.birthdayValues.year.length == 4)) {
-            this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
+          this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
             this.birthdayValues.month + ' ' + this.birthdayValues.year;
         }
       }
       ,
       "birthdayValues.year"(value) {
         if ((this.birthdayValues.day != null && this.birthdayValues.month != null) && (value.length == 4)) {
-            this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
+          this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
             this.birthdayValues.month + ' ' + this.birthdayValues.year;
         }
       }
@@ -173,12 +187,17 @@
       "birthdayValues.month"() {
 
         if ((this.birthdayValues.year != null && this.birthdayValues.day != null) && (this.birthdayValues.year.length == 4)) {
-            this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
+          this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
             this.birthdayValues.month + ' ' + this.birthdayValues.year;
 
         }
       }
-      ,
+
+    },
+    computed: {
+      lorem() {
+        return this.$store.getters.getPersonalDetails;
+      }
     }
   }
 

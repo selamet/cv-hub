@@ -10,30 +10,34 @@
 
     <div class="navigation-list">
 
-        <router-link
-          active-class="active"
-          to="/personal-details"
-          tag="a">
-            <a class="navigation-list-item text-white">Personal Details</a>
-        </router-link>
+      <router-link
+        active-class="active"
+        to="/personal-details"
+        tag="a">
+        <a class="navigation-list-item text-white">Personal Details</a>
+      </router-link>
 
-        <router-link
-          active-class="active"
-          to="/personal-history"
-          tag="a">
-            <a class="navigation-list-item text-white">Personal History</a>
-        </router-link>
+      <router-link
+        active-class="active"
+        to="/personal-history"
+        tag="a">
+        <a class="navigation-list-item text-white">Personal History</a>
+      </router-link>
+      <router-link
+        active-class="active"
+        to="/create-cv"
+        tag="a">
+        <a class="navigation-list-item text-white">CreateCV</a>
+      </router-link>
 
     </div>
   </nav>
 </template>
 
 
-
 <script>
 
 </script>
-
 
 
 <style lang="scss">
@@ -61,7 +65,6 @@
         font-family: sans-serif;
       }
     }
-
 
 
     &-list {

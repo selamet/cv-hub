@@ -62,6 +62,7 @@
 </template>
 
 <script>
+
   export default {
     data() {
       return {
@@ -100,7 +101,10 @@
             /*create*/
             this.referenceList.push(this.reference);
             this.formShow = false;
+           
+
             this.setDefaultReference();
+
           }
         } else {
           alert('Şirket veya Kişi Seçiniz ve En az Bir İletişim Şekil Giriniz.')
