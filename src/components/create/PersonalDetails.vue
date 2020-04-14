@@ -67,11 +67,11 @@
               </div>
               <div class=" col-md-6 form-group">
                 <label>Doğum Yeri</label>
-                <input v-model="additionalInformation.placeOfBirth" type="text" class="form-control">
+                <input v-model="personalDetails.placeOfBirth" type="text" class="form-control">
               </div>
               <div class="col-md-6 form-group">
                 <label>Sürücü Ehliyeti</label>
-                <select v-model="additionalInformation.drivingLicense" class="form-control">
+                <select v-model="personalDetails.drivingLicense" class="form-control">
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
@@ -81,7 +81,7 @@
               </div>
               <div class="col-md-6 form-group">
                 <label> Cinsiyet Seçiniz</label>
-                <select v-model="additionalInformation.gender" class="form-control">
+                <select v-model="personalDetails.gender" class="form-control">
                   <option key="erkek">Erkek</option>
                   <option key="kadin">Kadın</option>
                 </select>
@@ -89,11 +89,11 @@
 
               <div class="form-group col-md-6">
                 <label>Medeni Durum</label>
-                <input v-model="additionalInformation.maritalStatus" type="text" class="form-control">
+                <input v-model="personalDetails.maritalStatus" type="text" class="form-control">
               </div>
               <div class="col-md-6 form-group">
                 <label>İnternet Sitesi</label>
-                <input v-model="additionalInformation.website" type="url" class="form-control">
+                <input v-model="personalDetails.website" type="url" class="form-control">
               </div>
 
             </div>
@@ -108,8 +108,8 @@
     </div>
 
     <p class="text-center m-3 mt-5">
-      {{lorem.name}}
-      <button @click="a" class="col-md-3 btn btn-lg btn-outline-dark">Devamke
+      {{personalDetails.name}}
+      <button @click="setPersonalDetails(personalDetails)" class="col-md-3 btn btn-lg btn-outline-dark">Devamke
       </button>
     </p>
   </div>
@@ -118,94 +118,61 @@
 </template>
 
 <script>
-  import {mapMutations, mapActions} from "vuex";
+  import {mapMutations, mapActions, mapGetters} from "vuex";
 
   export default {
-
     data() {
       return {
         additionalInformationShow: false,
-        personalDetails: {
-          name: '',
-          surname: '',
-          phoneNumber: '',
-          email: '',
-          address: '',
-          city: ''
-
-        },
-        additionalInformation: {
-
-          birthday: null,
-          placeOfBirth: '',
-          drivingLicense: '',
-          gender: null,
-          maritalStatus: '',
-          website: ''
-
-        },
-        birthdayValues: {
-          day: null,
-          year: null,
-          month: null,
-          months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
-        }
 
       }
     },
     methods: {
-      ...mapMutations([
+      ...mapActions([
           'setPersonalDetails',
         ]
       ),
-      a() {
-        this.setPersonalDetails(this.personalDetails);
-      },
+
 
       additionalInformationChange() {
         this.additionalInformationShow = !this.additionalInformationShow;
       }
     },
     watch: {
-
-
       "birthdayValues.day"() {
-
-        if ((this.birthdayValues.year != null && this.birthdayValues.month != null) && (this.birthdayValues.year.length == 4)) {
-          this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
+        if ((this.birthdayValues.year != null && this.birthdayValues.month != null) && (this.birthdayValues.year)) {
+          this.personalDetails.birthday = this.birthdayValues.day + ' ' +
             this.birthdayValues.month + ' ' + this.birthdayValues.year;
         }
       }
       ,
       "birthdayValues.year"(value) {
-        if ((this.birthdayValues.day != null && this.birthdayValues.month != null) && (value.length == 4)) {
-          this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
+        if ((this.birthdayValues.day != null && this.birthdayValues.month != null) && (value.length)) {
+          this.personalDetails.birthday = this.birthdayValues.day + ' ' +
             this.birthdayValues.month + ' ' + this.birthdayValues.year;
         }
       }
       ,
       "birthdayValues.month"() {
-
-        if ((this.birthdayValues.year != null && this.birthdayValues.day != null) && (this.birthdayValues.year.length == 4)) {
-          this.additionalInformation.birthday = this.birthdayValues.day + ' ' +
+        if ((this.birthdayValues.year != null && this.birthdayValues.day != null) && (this.birthdayValues.year)) {
+          this.personalDetails.birthday = this.birthdayValues.day + ' ' +
             this.birthdayValues.month + ' ' + this.birthdayValues.year;
-
         }
       }
-
     },
     computed: {
-      lorem() {
-        return this.$store.getters.getPersonalDetails;
-      }
+      ...mapGetters({
+        personalDetails: 'getPersonalDetails',
+        birthdayValues: 'getBirthdayValue',
+
+      }),
+
     }
   }
-
 </script>
 
 
 <style scoped>
-
   .fade-enter {
     opacity: 0;
   }

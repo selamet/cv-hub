@@ -1,3 +1,3 @@
-export const setValueData = ({ commit }, payload) => {
-
-}
+export const setPersonalDetails = ({commit}, payload) => {
+  commit("setPersonalValue", payload);
+};

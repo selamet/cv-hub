@@ -9,8 +9,26 @@ Vue.use(Vuex);
 export const store = new Vuex.Store({
   state: {
     personalDetails: {
-      name : ''
+      name: '',
+      surname: '',
+      phoneNumber: '',
+      email: '',
+      address: '',
+      city: '',
+      birthday: null,
+      placeOfBirth: '',
+      drivingLicense: '',
+      gender: null,
+      maritalStatus: '',
+      website: ''
+    },
+    birthdayValues: {
+      day: null,
+      year: null,
+      month: null,
+      months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
     }
+
   },
   getters,
   mutations,

@@ -1,7 +1,6 @@
 <template>
   <div>
-    {{personalDetails.name}}
-    {{personalDetails.surname}}
+    <p v-for="i in personalDetails">{{i}}</p>
   </div>
 
 </template>

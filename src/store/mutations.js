@@ -1,5 +1,7 @@
-export const setPersonalDetails = (state, payload) => {
-  console.log(payload);
-  state.personalDetails.name = payload.name;
+export const setPersonalValue = (state, payload) => {
+  state.personalDetails = payload
 }
 
+export const setAdditionalInformationValue = (state, payload) => {
+  state.additionalInformation = payload
+}

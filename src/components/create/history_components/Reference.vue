@@ -101,7 +101,7 @@
             /*create*/
             this.referenceList.push(this.reference);
             this.formShow = false;
-           
+
 
             this.setDefaultReference();
 
