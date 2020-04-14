@@ -20,8 +20,7 @@
       <div class="form-row">
         <div class="col-md-12 mb-3">
           <label>Açıklama</label>
-          <textarea v-model="profile.values.content" class="form-control"
-                    required></textarea>
+          <vue-editor v-model="profile.values.content"></vue-editor>
         </div>
 
 
@@ -41,9 +40,13 @@
 
 <script>
   import {mapMutations, mapActions, mapGetters} from "vuex";
+  import { VueEditor } from "vue2-editor";
 
   export default {
 
+    components: {
+      VueEditor
+    },
     methods: {
       ...mapMutations({
         addProfile: 'addProfile',
