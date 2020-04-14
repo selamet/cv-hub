@@ -10,3 +10,6 @@ export const getProfile = (state) => {
 };
 
 
+export const getEducationData = (state) => {
+  return state.personalHistory.educationData
+};

@@ -35,6 +35,30 @@ export const store = new Vuex.Store({
         values: {
           content: '',
         }
+      },
+      educationData :{
+        months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
+        ,
+        formShow: true,
+        isUpdate: {
+          status: false,
+          index: null
+        },
+        education: {
+          agree: '',
+          city: '',
+          school: '',
+          starter_date: {
+            month: 'Month',
+            year: 'Year'
+          },
+          end_date: {
+            month: 'Month',
+            year: 'Year'
+          },
+          content: '',
+        },
+        educationList: [],
       }
     },
 
