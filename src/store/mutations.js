@@ -2,10 +2,7 @@ export const setPersonalValue = (state, payload) => {
   state.personalHistory.personalDetails = payload
 };
 
-export const setAdditionalInformationValue = (state, payload) => {
-  state.personalHistory.additionalInformation = payload
-
-};
+// Profile
 
 export const addProfile = (state, payload) => {
   let query = payload.length > 0;
@@ -86,10 +83,11 @@ export const setDefaultEducation = (state) => {
       year: 'Year'
     },
   };
-}
+};
 
 export const destroyEducation = (state, payload) => {
   state.personalHistory.educationData.educationList.splice(payload, 1);
+  this.setDefaultEducation(state);
 };
 
 export const editEducation = (state, payload) => {
@@ -104,3 +102,81 @@ export const editEducation = (state, payload) => {
 
 };
 
+
+// Experience
+
+export const addExperience = (state, payload) => {
+  let myState = state.personalHistory.experienceData;
+
+  let query = payload.jobTitle.length > 0 && payload.city.length > 0 && payload.employer.length > 0
+    && payload.starter_date.month != 'Month' && payload.starter_date.year != 'Year'
+    && payload.end_date.month != 'Month' && payload.end_date.year != 'Year';
+  if (query) {
+    /* Tempalte üzerinde gösterirken bir filter yazılacak!!!!! */
+    for (var i in myState.experience.starter_date) {
+      if (myState.experience.starter_date[i] == 'gosterme') {
+        myState.experience.starter_date[i] = null;
+      }
+    }
+    for (var i in myState.experience.end_date) {
+      if (myState.experience.end_date[i] == 'gosterme') {
+        myState.experience.end_date[i] = null;
+      }
+    }
+    if (myState.isUpdate.status) {
+      myState.experienceList[myState.isUpdate.index] = myState.experience;
+      myState.formShow = false;
+      myState.isUpdate = {
+        status: false,
+        index: null
+      };
+      this.setDefaultExperience(state);
+    } else {
+      myState.experienceList.push(myState.experience);
+      myState.formShow = false;
+      this.setDefaultExperience(state);
+    }
+  } else {
+    alert("Lütfen Tüm Alanları Doldurunuz !!!!");
+  }
+
+
+};
+
+export const addNewExperience = (state) => {
+  this.setDefaultExperience(state);
+  state.personalHistory.experienceData.formShow = true;
+};
+
+export const setDefaultExperience = (state) => {
+  state.personalHistory.experienceData.experience = {
+    jobTitle: '',
+    city: '',
+    employer: '',
+    starter_date: {
+      month: 'Month',
+      year: 'Year'
+    },
+    end_date: {
+      month: 'Month',
+      year: 'Year'
+    },
+  };
+};
+
+export const destroyExperience = (state, payload) => {
+  state.personalHistory.experienceData.experienceList.splice(payload, 1);
+  this.setDefaultEducation(state);
+};
+
+export const editExperience = (state, payload) => {
+  let myState = state.personalHistory.experienceData;
+  myState.experience = myState.experienceList[payload];
+  myState.formShow = true;
+  myState.isUpdate = {
+    'index': payload,
+    'status': true
+  }
+
+
+};

@@ -36,7 +36,7 @@ export const store = new Vuex.Store({
           content: '',
         }
       },
-      educationData :{
+      educationData: {
         months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
         ,
         formShow: true,
@@ -59,7 +59,32 @@ export const store = new Vuex.Store({
           content: '',
         },
         educationList: [],
+      },
+      experienceData: {
+        months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
+        ,
+        formShow: true,
+        isUpdate: {
+          status: false,
+          index: null
+        },
+        experience: {
+          jobTitle: '',
+          city: '',
+          employer: '',
+          starter_date: {
+            month: 'Month',
+            year: 'Year'
+          },
+          end_date: {
+            month: 'Month',
+            year: 'Year'
+          },
+          content: '',
+        },
+        experienceList: [],
       }
+
     },
 
   },

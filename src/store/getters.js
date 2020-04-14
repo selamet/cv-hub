@@ -5,11 +5,15 @@ export const getPersonalDetails = (state) => {
 export const getBirthdayValue = (state) => {
   return state.birthdayValues
 };
+
 export const getProfile = (state) => {
   return state.personalHistory.profile
 };
 
-
 export const getEducationData = (state) => {
   return state.personalHistory.educationData
+};
+
+export const getExperienceData = (state) => {
+  return state.personalHistory.experienceData
 };
