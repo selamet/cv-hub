@@ -27,7 +27,16 @@ export const store = new Vuex.Store({
       year: null,
       month: null,
       months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
-    }
+    },
+    personalHistory: {
+      profile: {
+        formShow: true,
+        saveStatus: false,
+        values: {
+          content: '',
+        }
+      }
+    },
 
   },
   getters,
