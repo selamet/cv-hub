@@ -84,7 +84,7 @@ export const store = new Vuex.Store({
         },
         experienceList: [],
       },
-      abilityData : {
+      abilityData: {
         abilityLevel: ['Acemi', 'Başlangıç', 'Yetenekli', 'Deneyimli', 'Uzman'],
         formShow: true,
         abilityList: [],
@@ -97,7 +97,7 @@ export const store = new Vuex.Store({
           index: null
         }
       },
-      languageData : {
+      languageData: {
         formShow: true,
         languageList: [],
         language: {
@@ -109,7 +109,7 @@ export const store = new Vuex.Store({
           index: null
         }
       },
-      referenceData : {
+      referenceData: {
         formShow: true,
         isUpdate: {
           status: false,
@@ -124,7 +124,7 @@ export const store = new Vuex.Store({
         },
         referenceList: [],
       },
-      hobbyData : {
+      hobbyData: {
         formShow: true,
         hobbyList: [],
         hobby: {
@@ -135,7 +135,7 @@ export const store = new Vuex.Store({
           index: null
         }
       },
-      courseData : {
+      courseData: {
         months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
         ,
         formShow: true,
@@ -158,6 +158,28 @@ export const store = new Vuex.Store({
         },
         courseList: [],
       },
+      achievementData: {
+        formShow: true,
+        achievementList: [],
+        achievement: {
+          content: '',
+        },
+        isUpdate: {
+          status: false,
+          index: null
+        }
+      },
+      publicationData : {
+        formShow: true,
+        publicationList: [],
+        publication: {
+          content: '',
+        },
+        isUpdate: {
+          status: false,
+          index: null
+        }
+      }
 
     },
 

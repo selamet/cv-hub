@@ -36,3 +36,9 @@ export const getHobbyData = (state) => {
 export const getCourseData = (state) => {
   return state.personalHistory.courseData
 };
+export const getAchievementData = (state) => {
+  return state.personalHistory.achievementData
+};
+export const getPublicationData = (state) => {
+  return state.personalHistory.publicationData
+};

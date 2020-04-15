@@ -1,11 +1,11 @@
 <template>
 
   <div class="col-10 offset-1 pt-3  mt-5 shadow ">
-    <h3>Yayınlar ({{PublicationList.length}})</h3>
+    <h3>Yayınlar ({{publicationData.publicationList.length}})</h3>
 
-    <div v-if="PublicationList.length>0" class="show-education">
+    <div v-if="publicationData.publicationList.length>0" class="show-education">
       <ul class="list-group">
-        <li v-for="(pbl,index) in PublicationList" class="list-group-item">
+        <li v-for="(pbl,index) in publicationData.publicationList" class="list-group-item">
 
           <div class=" float-left">{{pbl.content}} {{index}}</div>
           <div class=" float-right control-panel">
@@ -16,11 +16,11 @@
       </ul>
     </div>
 
-    <form v-if="formShow">
+    <form v-if="publicationData.formShow">
       <div class="form-row">
         <div class="col-md-12 mb-3">
           <label>Açıklama</label>
-          <textarea v-model="publication.content" class="form-control"
+          <textarea v-model="publicationData.publication.content" class="form-control"
                     required></textarea>
         </div>
 
@@ -30,7 +30,7 @@
     <div id="buttons">
       <p class="text-right">
         <button class="m-3 btn btn-outline-danger">Sil</button>
-        <button @click="addPublication()" class="m-3 btn btn-outline-info">Kaydet</button>
+        <button @click="addPublication(publicationData.publication)" class="m-3 btn btn-outline-info">Kaydet</button>
       </p>
       <p>
         <button @click="addNewPublication()" class="btn btn-outline-dark btn-block col-md-8 offset-md-2">Başka Bir
@@ -45,67 +45,28 @@
 
 
 <script>
+  import {mapGetters, mapMutations} from "vuex"
+
   export default {
-    data() {
-      return {
-        formShow: true,
-        PublicationList: [],
-        publication: {
-          content: '',
-        },
-        isUpdate: {
-          status: false,
-          index: null
-        }
 
-      }
-    },
     methods: {
-      addPublication() {
-        let query = this.publication.content.length > 0;
-        if (query) {
-          if (this.isUpdate.status) {
-            this.PublicationList[this.isUpdate.index] = this.publication;
-            this.isUpdate = {
-              status: false,
-              index: null
-            };
-            this.formShow = false;
-            this.setDefaultPublication();
-          } else {
-            this.PublicationList.push(this.publication);
-            this.formShow = false;
-            this.setDefaultPublication();
+      ...mapMutations([
+        'addPublication',
+        'addNewPublication',
+        'setDefaultPublication',
+        'destroyPublication',
+        'editPublication',
+      ]),
 
-          }
-        } else {
-          alert('Lütfen Tüm Alanları Doldurduğunuzdan Emin Olun!!!');
-        }
-      },
-      setDefaultPublication() {
-        this.publication = {
-          content: '',
-        }
-      },
-      addNewPublication() {
-        this.setDefaultPublication();
-        this.formShow = true;
-      },
-      destroyPublication(index) {
-        this.PublicationList.splice(index, 1);
-      },
-      editPublication(index) {
-        this.publication = this.PublicationList[index];
-        this.formShow = true;
-        this.isUpdate = {
-          status: true,
-          index: index
 
-        }
-      }
-    }
 
-  }
+
+    },
+    computed: {
+      ...mapGetters({
+        publicationData: 'getPublicationData'
+      })
+    }}
 
 </script>
 

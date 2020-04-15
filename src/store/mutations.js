@@ -470,3 +470,111 @@ export const editCourse = (state, payload) => {
   coursePath.isUpdate.status = true;
   coursePath.isUpdate.index = payload;
 };
+
+//Achievement
+
+export const addAchievement = (state, payload) => {
+  let achievementPath = state.personalHistory.achievementData;
+
+  let query = payload.content.length > 0;
+  if (query) {
+    if (achievementPath.isUpdate.status) {
+      achievementPath.achievementList[achievementPath.isUpdate.index] = achievementPath.achievement;
+      achievementPath.isUpdate = {
+        status: false,
+        index: null
+      };
+      achievementPath.formShow = false;
+      this.setDefaultAchievement(state);
+    } else {
+      achievementPath.achievementList.push(achievementPath.achievement);
+      achievementPath.formShow = false;
+      this.setDefaultAchievement(state);
+
+    }
+  } else {
+    alert('Lütfen Tüm Alanları Doldurduğunuzdan Emin Olun!!!');
+  }
+};
+export const addNewAchievement = (state) => {
+  let achievementPath = state.personalHistory.achievementData;
+  this.setDefaultAchievement(state);
+  achievementPath.formShow = true;
+};
+export const setDefaultAchievement = (state) => {
+  let achievementPath = state.personalHistory.achievementData;
+  achievementPath.achievement = {
+    content: '',
+  }
+};
+export const destroyAchievement = (state, payload) => {
+  let achievementPath = state.personalHistory.achievementData;
+  achievementPath.achievementList.splice(payload, 1);
+  this.setDefaultAchievement(state);
+};
+export const editAchievement = (state, payload) => {
+  let achievementPath = state.personalHistory.achievementData;
+  achievementPath.achievement = achievementPath.achievementList[payload];
+  achievementPath.formShow = true;
+  achievementPath.isUpdate = {
+    status: true,
+    index: payload
+
+  }
+};
+
+
+// Publication
+
+export const addPublication = (state, payload) => {
+  let publicationPath = state.personalHistory.publicationData;
+  let query = payload.content.length > 0;
+  if (query) {
+    if (publicationPath.isUpdate.status) {
+      publicationPath.publicationList[publicationPath.isUpdate.index] = publicationPath.publication;
+      publicationPath.isUpdate = {
+        status: false,
+        index: null
+      };
+      publicationPath.formShow = false;
+      this.setDefaultPublication(state);
+    } else {
+      publicationPath.publicationList.push(publicationPath.publication);
+      publicationPath.formShow = false;
+      this.setDefaultPublication(state);
+
+    }
+  } else {
+    alert('Lütfen Tüm Alanları Doldurduğunuzdan Emin Olun!!!');
+  }
+
+
+};
+export const addNewPublication = (state) => {
+  let publicationPath = state.personalHistory.publicationData;
+  this.setDefaultPublication(state);
+  publicationPath.formShow = true;
+
+};
+export const setDefaultPublication = (state) => {
+  let publicationPath = state.personalHistory.publicationData;
+  publicationPath.publication = {
+    content: '',
+  }
+
+};
+export const destroyPublication = (state, payload) => {
+  let publicationPath = state.personalHistory.publicationData;
+  publicationPath.publicationList.splice(payload, 1);
+  this.setDefaultPublication(state);
+};
+export const editPublication = (state, payload) => {
+  let publicationPath = state.personalHistory.publicationData;
+  publicationPath.publication = publicationPath.publicationList[payload];
+  publicationPath.formShow = true;
+  publicationPath.isUpdate = {
+    status: true,
+    index: payload
+
+  }
+};
