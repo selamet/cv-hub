@@ -83,7 +83,81 @@ export const store = new Vuex.Store({
           content: '',
         },
         experienceList: [],
-      }
+      },
+      abilityData : {
+        abilityLevel: ['Acemi', 'Başlangıç', 'Yetenekli', 'Deneyimli', 'Uzman'],
+        formShow: true,
+        abilityList: [],
+        ability: {
+          name: '',
+          level: 'Seç'
+        },
+        isUpdate: {
+          status: false,
+          index: null
+        }
+      },
+      languageData : {
+        formShow: true,
+        languageList: [],
+        language: {
+          name: '',
+          level: 'Seç',
+        },
+        isUpdate: {
+          status: false,
+          index: null
+        }
+      },
+      referenceData : {
+        formShow: true,
+        isUpdate: {
+          status: false,
+          index: null
+        },
+        reference: {
+          company: '',
+          person: '',
+          telephone: '',
+          email: '',
+
+        },
+        referenceList: [],
+      },
+      hobbyData : {
+        formShow: true,
+        hobbyList: [],
+        hobby: {
+          name: '',
+        },
+        isUpdate: {
+          status: false,
+          index: null
+        }
+      },
+      courseData : {
+        months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
+        ,
+        formShow: true,
+        isUpdate: {
+          status: false,
+          index: null
+        },
+        course: {
+          name: '',
+          institution: '',
+          starter_date: {
+            month: 'Month',
+            year: 'Year'
+          },
+          end_date: {
+            month: 'Month',
+            year: 'Year'
+          },
+          content: '',
+        },
+        courseList: [],
+      },
 
     },
 
