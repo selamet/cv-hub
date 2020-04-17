@@ -20,8 +20,7 @@
       <div class="form-row">
         <div class="col-md-12 mb-3">
           <label>Açıklama</label>
-          <textarea v-model="publicationData.publication.content" class="form-control"
-                    required></textarea>
+          <vue-editor v-model="publicationData.publication.content" :editor-toolbar="customToolbar"></vue-editor>
         </div>
 
 
@@ -46,8 +45,23 @@
 
 <script>
   import {mapGetters, mapMutations} from "vuex"
+  import { VueEditor } from "vue2-editor";
 
   export default {
+
+    components: {
+      VueEditor
+    },
+    
+    data () {
+      return {
+        customToolbar: [
+          ["bold", "italic", "underline"],
+          [{ list: "ordered" }, { list: "bullet" }],
+          [{ header: [false, 1, 2, 3, 4, 5, 6] }],
+        ]
+      }
+    },
 
     methods: {
       ...mapMutations([

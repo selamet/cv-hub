@@ -20,7 +20,7 @@
       <div class="form-row">
         <div class="col-md-12 mb-3">
           <label>Açıklama</label>
-          <vue-editor v-model="profile.values.content"></vue-editor>
+          <vue-editor v-model="profile.values.content" :editor-toolbar="customToolbar"></vue-editor>
         </div>
 
 
@@ -47,6 +47,17 @@
     components: {
       VueEditor
     },
+
+    data () {
+      return {
+        customToolbar: [
+          ["bold", "italic", "underline"],
+          [{ list: "ordered" }, { list: "bullet" }],
+          [{ header: [false, 1, 2, 3, 4, 5, 6] }],
+        ]
+      }
+    },
+
     methods: {
       ...mapMutations({
         addProfile: 'addProfile',
