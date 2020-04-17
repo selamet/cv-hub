@@ -12,6 +12,7 @@
   "dependencies": {
     "-": "0.0.1",
     "g": "^2.0.1",
+    "jspdf": "^1.5.3",
     "node-gyp": "^6.1.0",
     "tiptap": "^1.26.8",
     "tiptap-extensions": "^1.28.8",
