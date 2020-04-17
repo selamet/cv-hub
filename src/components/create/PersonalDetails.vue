@@ -4,6 +4,17 @@
 
       <div class="col-10 offset-1 pt-3 mt-5 shadow">
         <form>
+
+          <div class="form-row">
+            <div class="card offset-4 col-md-3">
+              <div class="card-body tex-center d-flex align-items-center flex-column">
+                <img height="128" class="img-responsive text-center mb-3"
+                     :src="personalDetails.image == null ? '/src/assets/default.png' : personalDetails.image">
+                <input ref="file" type="file" style="display: none;" @change="onChange($event)" class="form-control">
+                <button class="btn btn-outline-secondary " type="button" @click="$refs.file.click()">Resim Seç</button>
+              </div>
+            </div>
+          </div>
           <div class="form-row">
             <div class="col-md-6 mb-3">
               <label>İsim</label>
@@ -119,6 +130,7 @@
 
 <script>
   import {mapMutations, mapActions, mapGetters} from "vuex";
+  import {getPersonalDetails} from "../../store/getters";
 
   export default {
     data() {
@@ -132,6 +144,10 @@
           'setPersonalDetails',
         ]
       ),
+      onChange(e) {
+        const file = e.target.files[0];
+        this.personalDetails.image = URL.createObjectURL(file);
+      },
 
 
       additionalInformationChange() {
