@@ -1,6 +1,9 @@
 <template>
   <div id="content" class="row">
     <div class="col-md-12">
+
+
+
       <div class="left-place col-md-2 float-left">
         <div class="m-3 personal">
           <img class="img col-md-12" :src="personalDetails.image" alt="">
@@ -13,8 +16,6 @@
           <p class="m-3"><strong>Doğum Yeri </strong>:<br> {{personalDetails.placeOfBirth}}</p>
           <p class="m-3"><strong>Email </strong>:<br> {{personalDetails.email}}</p>
           <p class="m-3"><strong>Website </strong>:<br> {{personalDetails.website}}</p>
-
-
         </div>
         <br>
         <div class="language">
@@ -25,7 +26,12 @@
           </p>
         </div>
       </div>
+
+
+
       <div class="right-place col-md-9 offset-md-2 m-3 float-right">
+
+
         <div class="col-md-12">
           <h2 class="text-center">{{personalDetails.name}} {{personalDetails.surname}}</h2>
           <hr>
@@ -33,7 +39,11 @@
             <p class="text-center"> {{profile.values.content}} </p>
           </div>
         </div>
+
+
         <br>
+
+
         <div class="work-experience col-md-12">
           <h4>Work Experience</h4>
           <hr>
@@ -43,11 +53,13 @@
             </p>
             <p><i>{{value.employer}}, {{value.city}}</i></p>
             <p>{{value.content}}</p>
-
           </div>
-
         </div>
+
+
         <br>
+
+
         <div class="col-md-12 education">
           <h4>Education</h4>
           <hr>
@@ -59,7 +71,11 @@
             <p>{{value.content}}</p>
           </div>
         </div>
+
+
         <br>
+
+
         <div class="col-md-12 ability">
           <h4>Skills</h4>
           <hr>
@@ -74,20 +90,24 @@
                      aria-valuemax="100"></div>
               </div>
             </div>
-
-
           </div>
         </div>
+
+
         <br>
+
 
         <div class="col-md-12 achievements">
           <h4>Achievements</h4>
           <hr>
           <div v-for="value in achievement.achievementList">
             <p>{{value.content}}</p>
-
           </div>
         </div>
+
+        <br>
+
+
         <div class="courses col-md-12">
           <h4>Work Experience</h4>
           <hr>
@@ -97,14 +117,14 @@
             </p>
             <p><i>{{value.institution}}</i></p>
             <p>{{value.content}}</p>
-
           </div>
-
         </div>
 
 
       </div>
     </div>
+
+    <br>
 
     <button id="cmd" class="btn btn-success col-md-10 btn-block">Export PDF</button>
   </div>
@@ -115,7 +135,7 @@
   import {mapMutations, mapActions, mapGetters} from "vuex";
   import jsPDF from "jspdf"
 
-  
+
   export default {
 
     computed: {
@@ -138,6 +158,10 @@
 
 
 <style scoped>
+
+  body {
+    background-color: #fff;
+  }
 
   .left-place {
     background: #0275d8;

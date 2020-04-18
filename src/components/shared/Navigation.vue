@@ -23,11 +23,19 @@
         tag="a">
         <a class="navigation-list-item text-white">Personal History</a>
       </router-link>
+
       <router-link
         active-class="active"
         to="/create-cv"
         tag="a">
         <a class="navigation-list-item text-white">CreateCV</a>
+      </router-link>
+
+      <router-link
+        active-class="active"
+        to="/create-cv2"
+        tag="a">
+        <a class="navigation-list-item text-white">CreateCV 2</a>
       </router-link>
 
     </div>
