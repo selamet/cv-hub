@@ -93,10 +93,93 @@
 
 
     <div class="general">
-      <div class="general-title">
+      <div class="general-name-title">
         <h1>Selamet Şamlı</h1>
         <h3>Software Developer</h3>
       </div>
+
+      <div class="general-work">
+        <h2 class="general-work-heading">Work Experience</h2>
+        <div class="general-work-title">
+
+          <div class="general-work-title-company">
+            <h3 class="general-work-title-company-name">Great Code</h3>
+            <h3 class="general-work-title-company-position">Software Developer</h3>
+          </div>
+
+          <div class="general-work-title-date">
+            <p>25 March, 2019</p>
+          </div>
+
+        </div>
+
+
+        <div class="general-work-title">
+
+          <div class="general-work-title-company">
+            <h3 class="general-work-title-company-name">Nasa</h3>
+            <h3 class="general-work-title-company-position">Python Developer</h3>
+          </div>
+
+          <div class="general-work-title-date">
+            <p>22 August, 2018</p>
+          </div>
+
+        </div>
+
+      </div>
+
+
+
+
+      <div class="general-achievements">
+        <h2 class="general-achievements-heading">Achievements</h2>
+        <div class="general-achievements-title">
+
+          <div class="general-achievements-title-organization">
+            <h3 class="general-achievements-title-organization-name">Django Girls</h3>
+            <h3 class="general-achievements-title-organization-position">Software Trainer</h3>
+          </div>
+
+          <div class="general-achievements-title-location">
+            <p>Trabzon</p>
+          </div>
+
+        </div>
+
+        <div class="general-achievements-title">
+
+          <div class="general-achievements-title-organization">
+            <h3 class="general-achievements-title-organization-name">PyErzurum</h3>
+            <h3 class="general-achievements-title-organization-position">Speaker</h3>
+          </div>
+
+          <div class="general-achievements-title-location">
+            <p>Erzurum</p>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="general-language">
+        <h2 class="general-language-heading">Language</h2>
+        <div class="general-language-title">
+
+          <div class="general-language-title-organization">
+            <h3 class="general-language-title-organization-name">ingilizce</h3>
+          </div>
+
+          <div class="general-language-title-location">
+            <p>3</p>
+          </div>
+
+        </div>
+
+
+      </div>
+
+
     </div>
 
   </div>
@@ -163,7 +246,7 @@
 
     border-radius:10px;
 
-
+    /* ------------ Personal Section ------------ */
     .personal {
       width: 25%;
       padding-left: 5%;
@@ -207,9 +290,6 @@
         color: $light-color;
         display: block;
 
-        i {
-
-        }
       }
 
 
@@ -335,11 +415,11 @@
 
 
 
-
+    /* ------------ General Section ------------ */
     .general {
       width: 75%;
-      padding-left: 5%;
-      padding-right: 5%;
+      padding-left: 0%;
+      padding-right: 0%;
       height: calc(92vh - 30px);
       background-color: transparent;
       display: flex;
@@ -351,7 +431,7 @@
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
 
-      &-title {
+      &-name-title {
         height: calc(25% - 30px);
         text-transform: uppercase;
         width: calc(100% - 20%);
@@ -383,6 +463,301 @@
           font-weight: 400;
           opacity: 0.85;
           letter-spacing: 2.5px;
+        }
+      }
+
+      &-work {
+        height: 25%;
+        text-transform: uppercase;
+        width: calc(100% - 20%);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        border-radius: 4px;
+        margin-left: 10%;
+        margin-right: 10%;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 5px;
+
+        &-heading {
+          color: $dark-color;
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          border-bottom: 2px solid rgba(0,0,0,0.3);
+          padding-bottom: 5px;
+          margin-bottom: 15px;
+          width: 100%;
+        }
+
+        &-title {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 20px;
+          padding-left: 15px;
+          border-left: 5px solid rgba(232, 153, 103, 0.4);
+          height: 40px;
+
+
+          &-company {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+
+            &-name {
+              width: 100%;
+              padding: 0px;
+              margin: 0px;
+              margin-bottom: 2.5px;
+              font-weight: 900;
+              text-transform: uppercase;
+              font-size: 14px;
+              letter-spacing: .5px;
+            }
+
+            &-position {
+              width: 100%;
+              padding: 0px;
+              margin: 0px;
+              margin-top: 5px;
+              font-weight: 400;
+              font-size: 12px;
+              letter-spacing: 1px;
+
+            }
+          }
+
+          &-date {
+            width: 25%;
+            background-color: gray;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(203, 208, 218);
+            border-radius: 2px;
+            height: 40px;
+
+            p {
+              margin: 0px;
+              padding: 0px;
+              color: $dark-color;
+              font-weight: 400;
+              font-size: 14px;
+            }
+          }
+        }
+
+        &-title:nth-child(2){
+          margin-top: 5px;
+        }
+      }
+
+      &-achievements {
+        height: 25%;
+        text-transform: uppercase;
+        width: calc(100% - 20%);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-left: 10%;
+        margin-right: 10%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0px;
+
+        &-heading {
+          color: $dark-color;
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          border-bottom: 2px solid rgba(0,0,0,0.3);
+          padding-bottom: 5px;
+          margin-bottom: 15px;
+          width: 100%;
+        }
+
+        &-title {
+          width: 100%;
+          height: 40px;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 20px;
+          padding-left: 15px;
+          border-left: 5px solid rgba(232, 153, 103, 0.4);
+
+
+          &-organization {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+
+            &-name {
+              width: 100%;
+              padding: 0px;
+              margin: 0px;
+              margin-bottom: 2.5px;
+              font-weight: 900;
+              text-transform: uppercase;
+              font-size: 14px;
+              letter-spacing: .5px;
+            }
+
+            &-position {
+              width: 100%;
+              padding: 0px;
+              margin: 0px;
+              margin-top: 5px;
+              font-weight: 400;
+              font-size: 12px;
+              letter-spacing: 1px;
+
+            }
+          }
+
+          &-location {
+            width: 25%;
+            height: 40px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(203, 208, 218);
+            border-radius: 2px;
+
+            p {
+              margin: 0px;
+              padding: 0px;
+              color: $dark-color;
+              font-weight: 400;
+              font-size: 14px;
+            }
+          }
+        }
+
+        &-title:nth-child(2){
+          margin-top: 5px;
+        }
+      }
+
+      &-language {
+        height: 25%;
+        text-transform: uppercase;
+        width: calc(100% - 20%);
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        margin-left: 10%;
+        margin-right: 10%;
+        justify-content: center;
+        align-items: center;
+        padding-top: 0px;
+
+        &-heading {
+          color: $dark-color;
+          font-size: 16px;
+          font-weight: 600;
+          letter-spacing: 2px;
+          border-bottom: 2px solid rgba(0,0,0,0.3);
+          padding-bottom: 5px;
+          margin-bottom: 15px;
+          width: 100%;
+        }
+
+        &-title {
+          width: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-top: 20px;
+          padding-left: 15px;
+          height: 40px;
+          background-color: $dark-color;
+          border-radius: 3px;
+
+
+
+          &-organization {
+            width: 75%;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            &-name {
+              width: 100%;
+              padding: 0px;
+              margin: 0px;
+              font-weight: 900;
+              text-transform: uppercase;
+              font-size: 14px;
+              letter-spacing: .5px;
+              color: $light-color;
+            }
+
+            &-position {
+              width: 100%;
+              padding: 0px;
+              margin: 0px;
+              font-weight: 400;
+              font-size: 12px;
+              letter-spacing: 1px;
+
+            }
+          }
+
+          &-location {
+            width: 25%;
+            height: 40px;
+            background-color: gray;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background-color: $dark-color;
+            border-top-right-radius: 2px;
+            border-bottom-right-radius: 2px;
+
+
+            p {
+              margin: 0px;
+              padding: 0px;
+              color: $light-color;
+              font-weight: 900;
+              background-color: $light-color;
+              color: $dark-color;
+              opacity: 0.6;
+              width: 30px;
+              display: flex;
+              text-align: center;
+              justify-content: center;
+              align-items: center;
+              height: 30px;
+              font-size: 16px;
+              border-radius: 50%;
+            }
+          }
+        }
+
+        &-title:nth-child(2){
+          margin-top: 5px;
         }
       }
     }
