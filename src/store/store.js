@@ -109,7 +109,7 @@ export const store = new Vuex.Store({
               month: 'Mart',
               year: 2020
             },
-            content: 'Lorem impsum dolor sit amet',
+            content: ' <ol><li>Selamet</li><li>ŞAMLI</li></ol>',
           }
         ],
       },

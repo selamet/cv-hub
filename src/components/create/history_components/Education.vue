@@ -21,9 +21,13 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label>Derece</label>
-          <input v-model="educationData.education.agree" type="text" class="form-control"
-                 placeholder="Örn. Fen Fakültesi Diploması"
-                 required>
+          {{$v}}
+          <input
+            @blue="$v.agree.$touch()"
+            v-model="agree" type="text" class="form-control"
+            placeholder="Örn. Fen Fakültesi Diploması"
+            :class="{'is-invalid' : $v.agree.$error}">
+          <small v-if="!$v.agree.required" class="form-text text-danger">Bu alan zorunludur...</small>
         </div>
         <div class="col-md-6 mb-3">
           <label>Şehir</label>
@@ -101,7 +105,9 @@
 
 <script>
   import {mapMutations, mapActions, mapGetters} from "vuex";
-  import { VueEditor } from "vue2-editor";
+  import {VueEditor} from "vue2-editor";
+  import {required} from "vuelidate/lib/validators"
+
 
   export default {
 
@@ -109,19 +115,30 @@
       VueEditor
     },
 
-    data () {
+    data() {
       return {
+        agree: '',
         customToolbar: [
           ["bold", "italic", "underline"],
-          [{ list: "ordered" }, { list: "bullet" }],
-          [{ header: [false, 1, 2, 3, 4, 5, 6] }],
+          [{list: "ordered"}, {list: "bullet"}],
+          [{header: [false, 1, 2, 3, 4, 5, 6]}],
         ]
       }
     },
+    validations: {
+      agree: {
+        required
+
+      }
+    },
+
 
     methods: {
       range: function (start, end) {
         return Array(end - start + 1).fill().map((_, idx) => start + idx)
+      },
+      test() {
+        alert('saü')
       },
       ...mapMutations([
         'addEducation',

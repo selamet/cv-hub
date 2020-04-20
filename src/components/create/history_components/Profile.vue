@@ -19,6 +19,7 @@
     <form v-if="profile.formShow">
       <div class="form-row">
         <div class="col-md-12 mb-3">
+          <p class="font-weight-light text-black-50"> <span class="fa fa-info-circle m-2">  </span>Kendinizden, hedeflerinizden ve başarılarınızdan bu kısımda bahsedin. Kendinizi en iyi ifade edeceğiniz kısım Profil kısmıdır. </p>
           <label>Açıklama</label>
           <vue-editor v-model="profile.values.content" :editor-toolbar="customToolbar"></vue-editor>
         </div>

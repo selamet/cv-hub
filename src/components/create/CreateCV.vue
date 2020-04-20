@@ -3,7 +3,6 @@
     <div class="col-md-12">
 
 
-
       <div class="left-place col-md-2 float-left">
         <div class="m-3 personal">
           <img class="img col-md-12" :src="personalDetails.image" alt="">
@@ -26,7 +25,6 @@
           </p>
         </div>
       </div>
-
 
 
       <div class="right-place col-md-9 offset-md-2 m-3 float-right">
@@ -52,7 +50,7 @@
               <span class="float-right">{{value.starter_date.month}} {{value.starter_date.year}}- {{value.end_date.month}} {{value.end_date.year}}</span>
             </p>
             <p><i>{{value.employer}}, {{value.city}}</i></p>
-            <p>{{value.content}}</p>
+            <p v-html="value.content"></p>
           </div>
         </div>
 
