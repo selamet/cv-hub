@@ -1,6 +1,7 @@
 <template>
-  <div id="content" class="row">
-    <div class="col-md-12">
+  <div class="row">
+
+    <div id="facture" class="col-md-12">
 
 
       <div class="left-place col-md-2 float-left">
@@ -124,17 +125,23 @@
 
     <br>
 
-    <button id="cmd" class="btn btn-success col-md-10 btn-block">Export PDF</button>
+    <button @click="createPDF" class="btn btn-success col-md-10 btn-block">Export PDF</button>
   </div>
 
 </template>
 
 <script>
+
+
   import {mapMutations, mapActions, mapGetters} from "vuex";
   import jsPDF from "jspdf"
-
+  import html2canvas from 'html2canvas';
 
   export default {
+
+    methods: {
+
+    },
 
     computed: {
       ...mapGetters({

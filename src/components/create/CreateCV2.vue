@@ -1,203 +1,215 @@
 <template>
   <div class="inclusive">
 
-  <div class="container">
-    <div class="personal">
+    <div id="lorem" class="container">
+      <div class="personal">
 
 
+        <div class="personal-collective personal-image">
 
-      <div class="personal-collective personal-image">
-
-        <img class="personal-image-img" :src="personalDetails.image" alt="">
-
-      </div>
-
-
-
-      <div class="personal-collective personal-contact">
-        <h2 class="personal-title"> <i class="fa fa-user"></i> Contact</h2>
-
-        <div class="personal-contact-list">
-
-          <div class="personal-contact-list-item">
-            <i class="fa fa-phone"></i>
-            <span class="phone">0533 333 3333</span>
-          </div>
-
-          <div class="personal-contact-list-item">
-            <i class="fa fa-phone"></i>
-            <span>selametsamli</span>
-          </div>
-
-          <div class="personal-contact-list-item">
-            <i class="fa fa-phone"></i>
-            <span>selamet.github.com</span>
-          </div>
-
-          <div class="personal-contact-list-item">
-            <i class="fa fa-phone"></i>
-            <span>Silikon Valley</span>
-          </div>
+          <img class="personal-image-img" :src="personalDetails.image" alt="">
 
         </div>
 
-      </div>
 
+        <div class="personal-collective personal-contact">
+          <h2 class="personal-title"><i class="fa fa-user"></i> Contact</h2>
 
+          <div class="personal-contact-list">
 
-      <div class="personal-collective personal-education">
-        <h2 class="personal-title"> <i class="fa fa-book"></i> Education</h2>
+            <div class="personal-contact-list-item">
+              <i class="fa fa-phone"></i>
+              <span class="phone">0533 333 3333</span>
+            </div>
 
-        <div class="personal-education-list">
+            <div class="personal-contact-list-item">
+              <i class="fa fa-phone"></i>
+              <span>selametsamli</span>
+            </div>
 
-          <div class="personal-education-list-item">
-            <h3>Lorem ipsum dolor.</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur.</p>
-          </div>
+            <div class="personal-contact-list-item">
+              <i class="fa fa-phone"></i>
+              <span>selamet.github.com</span>
+            </div>
 
-          <div class="personal-education-list-item">
-            <h3>Lorem ipsum dolor.</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur.</p>
-          </div>
+            <div class="personal-contact-list-item">
+              <i class="fa fa-phone"></i>
+              <span>Silikon Valley</span>
+            </div>
 
-
-        </div>
-      </div>
-
-
-
-      <div class="personal-collective personal-skills">
-        <h2 class="personal-title"> <i class="fa fa-globe"></i> Skills</h2>
-
-        <div class="personal-skills-list">
-          <div class="personal-skills-list-item">
-            <h3>HTML / CSS</h3>
-          </div>
-          <div class="personal-skills-list-item">
-            <h3>Javascript</h3>
-          </div>
-          <div class="personal-skills-list-item">
-            <h3>Vue</h3>
-          </div>
-          <div class="personal-skills-list-item">
-            <h3>React</h3>
-          </div>
-          <div class="personal-skills-list-item">
-            <h3>Photoshop</h3>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
-
-
-    <div class="general">
-      <div class="general-name-title">
-        <h1>Selamet Şamlı</h1>
-        <h3>Software Developer</h3>
-      </div>
-
-      <div class="general-work">
-        <h2 class="general-work-heading">Work Experience</h2>
-        <div class="general-work-title">
-
-          <div class="general-work-title-company">
-            <h3 class="general-work-title-company-name">Great Code</h3>
-            <h3 class="general-work-title-company-position">Software Developer</h3>
-          </div>
-
-          <div class="general-work-title-date">
-            <p>25 March, 2019</p>
           </div>
 
         </div>
 
 
-        <div class="general-work-title">
+        <div class="personal-collective personal-education">
+          <h2 class="personal-title"><i class="fa fa-book"></i> Education</h2>
 
-          <div class="general-work-title-company">
-            <h3 class="general-work-title-company-name">Nasa</h3>
-            <h3 class="general-work-title-company-position">Python Developer</h3>
+          <div class="personal-education-list">
+
+            <div class="personal-education-list-item">
+              <h3>Lorem ipsum dolor.</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur.</p>
+            </div>
+
+            <div class="personal-education-list-item">
+              <h3>Lorem ipsum dolor.</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur.</p>
+            </div>
+
+
           </div>
-
-          <div class="general-work-title-date">
-            <p>22 August, 2018</p>
-          </div>
-
         </div>
 
-      </div>
 
+        <div class="personal-collective personal-skills">
+          <h2 class="personal-title"><i class="fa fa-globe"></i> Skills</h2>
 
-
-
-      <div class="general-achievements">
-        <h2 class="general-achievements-heading">Achievements</h2>
-        <div class="general-achievements-title">
-
-          <div class="general-achievements-title-organization">
-            <h3 class="general-achievements-title-organization-name">Django Girls</h3>
-            <h3 class="general-achievements-title-organization-position">Software Trainer</h3>
+          <div class="personal-skills-list">
+            <div class="personal-skills-list-item">
+              <h3>HTML / CSS</h3>
+            </div>
+            <div class="personal-skills-list-item">
+              <h3>Javascript</h3>
+            </div>
+            <div class="personal-skills-list-item">
+              <h3>Vue</h3>
+            </div>
+            <div class="personal-skills-list-item">
+              <h3>React</h3>
+            </div>
+            <div class="personal-skills-list-item">
+              <h3>Photoshop</h3>
+            </div>
           </div>
-
-          <div class="general-achievements-title-location">
-            <p>Trabzon</p>
-          </div>
-
-        </div>
-
-        <div class="general-achievements-title">
-
-          <div class="general-achievements-title-organization">
-            <h3 class="general-achievements-title-organization-name">PyErzurum</h3>
-            <h3 class="general-achievements-title-organization-position">Speaker</h3>
-          </div>
-
-          <div class="general-achievements-title-location">
-            <p>Erzurum</p>
-          </div>
-
         </div>
       </div>
+      <div class="general">
+        <div class="general-name-title">
+          <h1>Selamet Şamlı</h1>
+          <h3>Software Developer</h3>
+        </div>
 
+        <div class="general-work">
+          <h2 class="general-work-heading">Work Experience</h2>
+          <div class="general-work-title">
 
-      <div class="general-language">
-        <h2 class="general-language-heading">Language</h2>
-        <div class="general-language-title">
+            <div class="general-work-title-company">
+              <h3 class="general-work-title-company-name">Great Code</h3>
+              <h3 class="general-work-title-company-position">Software Developer</h3>
+            </div>
 
-          <div class="general-language-title-organization">
-            <h3 class="general-language-title-organization-name">ingilizce</h3>
+            <div class="general-work-title-date">
+              <p>25 March, 2019</p>
+            </div>
+
           </div>
 
-          <div class="general-language-title-location">
-            <p>3</p>
+
+          <div class="general-work-title">
+
+            <div class="general-work-title-company">
+              <h3 class="general-work-title-company-name">Nasa</h3>
+              <h3 class="general-work-title-company-position">Python Developer</h3>
+            </div>
+
+            <div class="general-work-title-date">
+              <p>22 August, 2018</p>
+            </div>
+
           </div>
 
         </div>
 
 
-      </div>
+        <div class="general-achievements">
+          <h2 class="general-achievements-heading">Achievements</h2>
+          <div class="general-achievements-title">
 
+            <div class="general-achievements-title-organization">
+              <h3 class="general-achievements-title-organization-name">Django Girls</h3>
+              <h3 class="general-achievements-title-organization-position">Software Trainer</h3>
+            </div>
+
+            <div class="general-achievements-title-location">
+              <p>Trabzon</p>
+            </div>
+
+          </div>
+
+          <div class="general-achievements-title">
+
+            <div class="general-achievements-title-organization">
+              <h3 class="general-achievements-title-organization-name">PyErzurum</h3>
+              <h3 class="general-achievements-title-organization-position">Speaker</h3>
+            </div>
+
+            <div class="general-achievements-title-location">
+              <p>Erzurum</p>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div class="general-language">
+          <h2 class="general-language-heading">Language</h2>
+          <div class="general-language-title">
+
+            <div class="general-language-title-organization">
+              <h3 class="general-language-title-organization-name">ingilizce</h3>
+            </div>
+
+            <div class="general-language-title-location">
+              <p>3</p>
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
 
     </div>
 
+    <button @click="createPDF()">PDF</button>
+
   </div>
 
-
-  </div>
 </template>
-
-
 
 
 <script>
 
   import {mapMutations, mapActions, mapGetters} from "vuex";
-  import jsPDF from "jspdf"
+
+  import jsPDF from 'jspdf'
+  import * as html2canvas from "html2canvas"
 
 
   export default {
+    methods: {
+      createPDF() {
+        html2canvas(document.querySelector("#lorem")).then(canvas => {
+          document.body.appendChild(canvas);
+        });
+        const input = document.getElementById('lorem');
+        html2canvas(input)
+          .then((canvas) => {
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF("p", "mm", "a4");
+            var width = pdf.internal.pageSize.getWidth();
+            var height = pdf.internal.pageSize.getHeight();
+            console.log(width, height);
+            pdf.addImage(imgData, 'PNG', 0, 0, width, height);
+            pdf.save("download.pdf");
+          });
+
+
+      },
+    },
 
     computed: {
       ...mapGetters({
@@ -218,14 +230,12 @@
 </script>
 
 
-
-
 <style lang="scss">
 
-  $orange-background : rgb(232 153 103);
-  $dark-color : rgb(49 49 49);
-  $light-color : #dddddd;
-  $x-light-color : #ededed;
+  $orange-background: rgb(232 153 103);
+  $dark-color: rgb(49 49 49);
+  $light-color: #dddddd;
+  $x-light-color: #ededed;
 
   .inclusive {
     background-color: #1d1133;
@@ -244,7 +254,7 @@
     display: flex;
     width: 100%;
 
-    border-radius:10px;
+    border-radius: 10px;
 
     /* ------------ Personal Section ------------ */
     .personal {
@@ -257,10 +267,10 @@
       flex-wrap: wrap;
       flex-direction: column;
       justify-content: space-between;
-      align-items:center;
-      -webkit-box-shadow: 3px 0px 7px 1px rgba(14,62,94,0.10);
-      -moz-box-shadow: 3px 0px 7px 1px rgba(14,62,94,0.10);
-      box-shadow: 3px 0px 7px 1px rgba(14,62,94,0.10);
+      align-items: center;
+      -webkit-box-shadow: 3px 0px 7px 1px rgba(14, 62, 94, 0.10);
+      -moz-box-shadow: 3px 0px 7px 1px rgba(14, 62, 94, 0.10);
+      box-shadow: 3px 0px 7px 1px rgba(14, 62, 94, 0.10);
 
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
@@ -293,7 +303,6 @@
       }
 
 
-
       &-image {
 
         display: flex;
@@ -312,7 +321,6 @@
 
         }
       }
-
 
 
       &-contact {
@@ -338,7 +346,6 @@
           }
         }
       }
-
 
 
       &-education {
@@ -376,7 +383,6 @@
       }
 
 
-
       &-skills {
         display: flex;
         flex-wrap: wrap;
@@ -393,7 +399,7 @@
             flex-wrap: wrap;
             flex-direction: row;
             justify-content: flex-start;
-            align-items:center ;
+            align-items: center;
             padding-top: 5px;
             padding-bottom: 5px;
 
@@ -414,7 +420,6 @@
     }
 
 
-
     /* ------------ General Section ------------ */
     .general {
       width: 75%;
@@ -426,7 +431,7 @@
       flex-wrap: wrap;
       flex-direction: column;
       justify-content: space-between;
-      align-items:center;
+      align-items: center;
 
       border-top-right-radius: 10px;
       border-bottom-right-radius: 10px;
@@ -440,9 +445,9 @@
         flex-direction: column;
         background-color: rgb(203, 208, 218);
         border-radius: 4px;
-        -webkit-box-shadow: 0px 3px 15px 1px rgba(14,62,94,0.10);
-        -moz-box-shadow: 0px 3px 15px 1px rgba(14,62,94,0.10);
-        box-shadow: 0px 3px 15px 1px rgba(14,62,94,0.10);
+        -webkit-box-shadow: 0px 3px 15px 1px rgba(14, 62, 94, 0.10);
+        -moz-box-shadow: 0px 3px 15px 1px rgba(14, 62, 94, 0.10);
+        box-shadow: 0px 3px 15px 1px rgba(14, 62, 94, 0.10);
         margin-top: 20px;
         margin-bottom: 10px;
         margin-left: 10%;
@@ -485,7 +490,7 @@
           font-size: 16px;
           font-weight: 600;
           letter-spacing: 2px;
-          border-bottom: 2px solid rgba(0,0,0,0.3);
+          border-bottom: 2px solid rgba(0, 0, 0, 0.3);
           padding-bottom: 5px;
           margin-bottom: 15px;
           width: 100%;
@@ -556,7 +561,7 @@
           }
         }
 
-        &-title:nth-child(2){
+        &-title:nth-child(2) {
           margin-top: 5px;
         }
       }
@@ -579,7 +584,7 @@
           font-size: 16px;
           font-weight: 600;
           letter-spacing: 2px;
-          border-bottom: 2px solid rgba(0,0,0,0.3);
+          border-bottom: 2px solid rgba(0, 0, 0, 0.3);
           padding-bottom: 5px;
           margin-bottom: 15px;
           width: 100%;
@@ -649,7 +654,7 @@
           }
         }
 
-        &-title:nth-child(2){
+        &-title:nth-child(2) {
           margin-top: 5px;
         }
       }
@@ -672,7 +677,7 @@
           font-size: 16px;
           font-weight: 600;
           letter-spacing: 2px;
-          border-bottom: 2px solid rgba(0,0,0,0.3);
+          border-bottom: 2px solid rgba(0, 0, 0, 0.3);
           padding-bottom: 5px;
           margin-bottom: 15px;
           width: 100%;
@@ -689,7 +694,6 @@
           height: 40px;
           background-color: $dark-color;
           border-radius: 3px;
-
 
 
           &-organization {
@@ -756,14 +760,13 @@
           }
         }
 
-        &-title:nth-child(2){
+        &-title:nth-child(2) {
           margin-top: 5px;
         }
       }
     }
 
   }
-
 
 
 </style>
