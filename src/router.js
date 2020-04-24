@@ -5,6 +5,7 @@ import PersonalDetails from "./components/create/PersonalDetails"
 import PersonalHistory from "./components/create/PersonalHistory"
 import CreateCV from "./components/create/CreateCV"
 import CreateCV2 from "./components/create/CreateCV2"
+import HtmlToPDF from "./components/test/HtmlToPdf"
 
 Vue.use(VueRouter);
 
@@ -14,6 +15,7 @@ const routes = [
   {path: "/personal-history", component: PersonalHistory},
   {path: "/create-cv", component: CreateCV},
   {path : "/create-cv2", component : CreateCV2},
+  {path : "/html-to-pdf", component : HtmlToPDF},
 
 
   {path: "*", redirect: "/"}
