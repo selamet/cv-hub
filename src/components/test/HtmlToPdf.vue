@@ -45,19 +45,21 @@
 
         const input = document.getElementById('lorem');
         html2canvas(input, {
-          width: 595,
-          height: 842,
+          width: 1190,
+          height: 1684,
           scrollX: 0,
           scrollY: -window.scrollY,
           scale: 2,
           dpi: 144
+
         }).then((canvas) => {
           const imgData = canvas.toDataURL('image/png');
           window.open(imgData, "_blank");
-          const pdf = new jsPDF('p', 'px', [canvas.height, canvas.width]);
+          const pdf = new jsPDF();
 
-          pdf.addImage(imgData, 'PNG', 0, 0, 5,5);
-          pdf.save("download.pdf");
+          pdf.addImage(imgData, 'PNG', 0, 0, 210, 300);
+          window.open(pdf.output('bloburl'), '_blank');
+          pdf.save('lorem.pdf')
         });
 
 
@@ -69,9 +71,9 @@
 <style scoped>
 
   #lorem {
-    width: 595px;
-    height: 842px;
-    background-color: red;
+    width: 1190px;
+    height: 1684px;
+    background-color: wheat;
   }
 
   #left-area {
