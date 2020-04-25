@@ -188,7 +188,12 @@
 </script>
 
 
-<style scoped>
+<style scoped lang="scss">
+
+  $form-white-background : #ffffff;
+  $form-dark-background : #f7f7f7;
+  $form-dark-color : #4c4c4c;
+
   .fade-enter {
     opacity: 0;
   }

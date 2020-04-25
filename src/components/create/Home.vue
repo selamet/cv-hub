@@ -1,4 +1,5 @@
 <template>
+  <section>
   <div class="home">
 
     <div class="home-title">
@@ -32,6 +33,13 @@
 
   </div>
 
+
+    <!-- <div class="deneme"></div> -->
+
+
+  </section>
+
+
 </template>
 
 
@@ -48,6 +56,9 @@
   .home {
     height: 92vh;
     width: 100%;
+    //
+    // background: rgb(96,43,157);
+    // background: linear-gradient(90deg, rgba(96,43,157,1) 0%, rgba(81,57,176,1) 50%, rgba(56,72,195,1) 100%);
     background-image: url("/src/assets/img/background.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -174,6 +185,19 @@
 
 
 
+
+
   }
+
+  /* .deneme {
+    width: 100%;
+    height: 100vh;
+    background: rgb(89,62,187);
+    background: linear-gradient(90deg, rgba(89,62,187,1) 0%, rgba(71,66,190,1) 50%, rgba(56,82,210,1) 100%);
+  }
+
+  */
+
+
 
 </style>
