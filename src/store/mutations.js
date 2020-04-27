@@ -27,6 +27,7 @@ export const addEducation = (state, payload) => {
   let query = payload.agree.length > 0 && payload.city.length > 0 && payload.school.length > 0
     && payload.starter_date.month != 'Month' && payload.starter_date.year != 'Year'
     && payload.end_date.month != 'Month' && payload.end_date.year != 'Year';
+
   let myState = state.personalHistory.educationData;
 
   if (query) {
@@ -171,7 +172,6 @@ export const editExperience = (state, payload) => {
 
 };
 
-
 // Ability
 
 export const addAbility = (state, payload) => {
@@ -279,7 +279,6 @@ export const editLanguage = (state, payload) => {
   languagePath.isUpdate.index = payload;
 };
 
-
 // Reference
 
 export const addReference = (state, payload) => {
@@ -342,9 +341,7 @@ export const editReference = (state, payload) => {
   }
 };
 
-
 // Hobby
-
 
 export const addHobby = (state, payload) => {
   let hobbyPath = state.personalHistory.hobbyData;
@@ -522,7 +519,6 @@ export const editAchievement = (state, payload) => {
 
   }
 };
-
 
 // Publication
 

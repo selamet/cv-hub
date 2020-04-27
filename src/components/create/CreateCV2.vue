@@ -192,20 +192,37 @@
   export default {
     methods: {
       createPDF() {
+        var divHeight = document.getElementById('lorem').clientHeight;
+        var divWidth = document.getElementById('lorem').clientWidth;
+        var ratio = divHeight / divWidth;
+
         html2canvas(document.querySelector("#lorem")).then(canvas => {
           document.body.appendChild(canvas);
+
+
         });
         const input = document.getElementById('lorem');
-        html2canvas(input)
-          .then((canvas) => {
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF("p", "mm", "a4");
-            var width = pdf.internal.pageSize.getWidth();
-            var height = pdf.internal.pageSize.getHeight();
-            console.log(width, height);
-            pdf.addImage(imgData, 'PNG', 0, 0, width, height);
-            pdf.save("download.pdf");
-          });
+        html2canvas(input, {
+          height: divHeight,
+          width: divWidth,
+          scrollX: 0,
+          scrollY: -window.scrollY,
+          scale: 2,
+          dpi: 144
+        }).then((canvas) => {
+          const imgData = canvas.toDataURL('image/png');
+          const pdf = new jsPDF("p", "mm", "a4");
+          var width = pdf.internal.pageSize.getWidth();
+          var height = pdf.internal.pageSize.getHeight();
+          height = ratio * width;
+
+
+          console.log(width, height);
+          pdf.addImage(imgData, 'PNG', 0, 0, width, height - 10);
+          window.open(pdf.output('bloburl'), '_blank');
+
+          //  pdf.save("download.pdf");
+        });
 
 
       },

@@ -59,20 +59,7 @@ export const store = new Vuex.Store({
           },
           content: '',
         },
-        educationList: [{
-          agree: 'Bilgisayar Mühendisliği',
-          city: 'Erzurum',
-          school: 'Ataturk University',
-          starter_date: {
-            month: 'Month',
-            year: 'Year'
-          },
-          end_date: {
-            month: 'Month',
-            year: 'Year'
-          },
-          content: '',
-        }],
+        educationList: [],
       },
       experienceData: {
         months: ['Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık']
