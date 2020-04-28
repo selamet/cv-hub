@@ -89,7 +89,7 @@
     <div id="buttons">
       <p class="text-right">
         <button class="m-3 btn btn-outline-danger">Sil</button>
-        <button @click="addEducation(educationData.education)" class="m-3 btn btn-outline-info">Kaydet</button>
+        <button :disabled="saveEnabled" @click="addEducation(educationData.education)" class="m-3 btn btn-outline-info">Kaydet</button>
       </p>
       <p>
         <button @click="addNewEducation()" class="btn btn-outline-dark btn-block col-md-8 offset-md-2">Başka bir eğitim
@@ -152,7 +152,25 @@
     computed: {
       ...mapGetters({
         educationData: 'getEducationData',
-      })
+      }),
+
+      // ---------------------------  u  g  i  --------------------
+      saveEnabled () {
+        if (this.agree.length > 0 &&
+            this.educationData.education.city.length > 0 &&
+            this.educationData.education.school.length > 0 &&
+            this.educationData.education.starter_date.month !== 'Month' &&
+            this.educationData.education.starter_date.year !== 'Year' &&
+            this.educationData.education.end_date.month !== 'Month' &&
+            this.educationData.education.end_date.year !== 'Year'
+        ){
+          return false;
+        }
+        else {
+          return true;
+        }
+      }
+      // ------------------------------------------------------------
     }
   }
 

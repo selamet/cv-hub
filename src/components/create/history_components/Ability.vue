@@ -39,7 +39,7 @@
     <div id="buttons">
       <p class="text-right">
         <button class="m-3 btn btn-outline-danger">Sil</button>
-        <button @click="addAbility(abilityData.ability)" class="m-3 btn btn-outline-info">Kaydet</button>
+        <button :disabled="saveEnabled" @click="addAbility(abilityData.ability)" class="m-3 btn btn-outline-info">Kaydet</button>
       </p>
       <p>
         <button @click="addNewAbility()" class="btn btn-outline-dark btn-block col-md-8 offset-md-2">Başka bir beceri
@@ -70,7 +70,18 @@
     computed: {
       ...mapGetters({
         abilityData: 'getAbilityData'
-      })
+      }),
+
+      // ---------------------------  u  g  i  --------------------
+      saveEnabled () {
+        if (this.abilityData.ability.name.length > 0 && this.abilityData.ability.level > 0){
+          return false;
+        }
+        else {
+          return true;
+        }
+      }
+      // ----------------------------------------------------------
     }
   }
 
