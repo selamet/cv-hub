@@ -33,6 +33,7 @@
 
 <style lang="scss">
   body {
+    font-family: 'Muli', sans-serif;
     background-color: #fffdf9;
   }
 

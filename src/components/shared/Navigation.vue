@@ -51,7 +51,7 @@
 <style lang="scss">
 
   .navigation {
-    background-color: #1d1133;
+    background-color: #794bc4;
     display: flex;
     align-items: center;
     width: 100%;
