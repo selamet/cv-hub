@@ -194,17 +194,11 @@
       createPDF() {
         var divHeight = document.getElementById('lorem').clientHeight;
         var divWidth = document.getElementById('lorem').clientWidth;
-        var ratio = divHeight / divWidth;
-        if (divHeight % 1684 > 1) {
-          var a = (divHeight % 1684) * 1684
-          divHeight = a + 'px'
-          document.getElementById("lorem").style.height = divHeight;
-        }
+        var pageHeight = 310.21;
 
+        var ratio = divHeight / divWidth;
         html2canvas(document.querySelector("#lorem")).then(canvas => {
           document.body.appendChild(canvas);
-
-
         });
         const input = document.getElementById('lorem');
         html2canvas(input, {
@@ -215,18 +209,30 @@
           scale: 2,
           dpi: 144
         }).then((canvas) => {
+
           const imgData = canvas.toDataURL('image/png', 0.3);
           const pdf = new jsPDF("p", "mm", "a4");
           var width = pdf.internal.pageSize.getWidth();
-          var height = pdf.internal.pageSize.getHeight();
-          height = ratio * width;
+          // var height = pdf.internal.pageSize.getHeight();
+          var height = ratio * width;
+          var heightLeft = height;
+          var position = 0;
 
 
           console.log(width, height);
-          pdf.addImage(imgData, 'PNG', 0, 0, width, height - 10, undefined, 'FAST');
+          pdf.addImage(imgData, 'PNG', 0, 0, width, height, undefined, 'FAST');
+          heightLeft -= pageHeight;
+          while (heightLeft >= 1) {
+            console.log('Çalıştı');
+            position = heightLeft - height;
+            pdf.addPage();
+            pdf.addImage(imgData, 'PNG', 0, position, width, height);
+            heightLeft -= pageHeight;
+          }
+          console.log('height: ', height, 'divHeight', divHeight, 'heightLeft', heightLeft)
           window.open(pdf.output('bloburl'), '_blank');
 
-          //  pdf.save("download.pdf");
+           pdf.save("download.pdf");
         });
 
 
@@ -263,12 +269,12 @@
     background-color: #1d1133;
     padding: 0px;
     width: 100%;
-    height: 1684px;
+    height: 2500px;
   }
 
   .container {
     margin-top: 0px;
-    height: calc(1684px);
+    height: calc(2500px);
     background-color: $x-light-color;
     padding: 0px;
     display: flex;
@@ -281,7 +287,7 @@
       width: 25%;
       padding-left: 5%;
       padding-right: 5%;
-      height: 1684px;
+      height: 2500px;
       background-color: rgba(232, 153, 103, 0.4);
       display: flex;
       flex-wrap: wrap;
@@ -445,7 +451,7 @@
       width: 75%;
       padding-left: 0%;
       padding-right: 0%;
-      height: 1684px;
+      height: 2500px;
       background-color: transparent;
       display: flex;
       flex-wrap: wrap;
