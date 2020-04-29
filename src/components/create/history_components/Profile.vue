@@ -17,9 +17,9 @@
       </div>
 
       <form class="profile-section" v-if="profile.formShow">
-        <p class="font-weight-light text-black-50"> <span class="fa fa-info-circle m-2">  </span>Kendinizden, hedeflerinizden ve başarılarınızdan bu kısımda bahsedin. Kendinizi en iyi ifade edeceğiniz kısım Profil kısmıdır. </p>
+        <p class="p-style"> Kendinizden, hedeflerinizden ve başarılarınızdan bu kısımda bahsedin. Kendinizi en iyi ifade edeceğiniz kısım Profil kısmıdır. </p>
         <div class="profile-section-editor">
-          <label>Açıklama</label>
+          <label class="label">Açıklama</label>
           <vue-editor v-model="profile.values.content" :editor-toolbar="customToolbar"></vue-editor>
         </div>
 
@@ -97,6 +97,12 @@
     box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.15);
     border-radius: 4px;
 
+    &-title {
+      font-size: 22px;
+      letter-spacing: .6px;
+      color: rgb(0,0,0,0.8);
+    }
+
   }
 
   .btn-remove {
@@ -123,6 +129,17 @@
     height: 45px;
     border-radius: 4px;
     background-color: rgba(0,0,0,0.09);
+  }
+
+  .p-style {
+    font-family: sans-serif;
+    font-weight: 400;
+    color: rgba(0,0,0,0.5);
+  }
+
+  .label {
+    color: rgba(0,0,0,0.7);
+    font-weight: 400;
   }
 
 </style>
