@@ -75,8 +75,8 @@
       width: 100%;
       height: 417px;
       position: absolute;
-      background-color: #794bc4;
-      background-color: #794bc4;
+      background-image: linear-gradient(90deg, #5d2d9f, #3446bf);
+
       top: 0;
       left: 0;
       z-index: -1;
@@ -87,8 +87,8 @@
       width: 100%;
       top: 417px;
       position: absolute;
-      background-color: #4f0299;
-      height: 35px;
+      background-color: #271f4f;
+      height: 20px;
       left: 0;
       z-index: -1;
     }

@@ -51,7 +51,7 @@
 <style lang="scss">
 
   .navigation {
-    background-color: #794bc4;
+    background-image: linear-gradient(90deg, #5d2d9f, #3446bf);
     display: flex;
     align-items: center;
     width: 100%;
