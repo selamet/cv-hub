@@ -195,6 +195,11 @@
         var divHeight = document.getElementById('lorem').clientHeight;
         var divWidth = document.getElementById('lorem').clientWidth;
         var ratio = divHeight / divWidth;
+        if (divHeight % 1684 > 1) {
+          var a = (divHeight % 1684) * 1684
+          divHeight = a + 'px'
+          document.getElementById("lorem").style.height = divHeight;
+        }
 
         html2canvas(document.querySelector("#lorem")).then(canvas => {
           document.body.appendChild(canvas);
@@ -210,7 +215,7 @@
           scale: 2,
           dpi: 144
         }).then((canvas) => {
-          const imgData = canvas.toDataURL('image/png');
+          const imgData = canvas.toDataURL('image/png', 0.3);
           const pdf = new jsPDF("p", "mm", "a4");
           var width = pdf.internal.pageSize.getWidth();
           var height = pdf.internal.pageSize.getHeight();
@@ -218,7 +223,7 @@
 
 
           console.log(width, height);
-          pdf.addImage(imgData, 'PNG', 0, 0, width, height - 10);
+          pdf.addImage(imgData, 'PNG', 0, 0, width, height - 10, undefined, 'FAST');
           window.open(pdf.output('bloburl'), '_blank');
 
           //  pdf.save("download.pdf");

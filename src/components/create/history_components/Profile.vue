@@ -8,7 +8,7 @@
         <ul class="list-group">
           <li class="list-group-item">
 
-            <div class=" float-left">{{profile.values.content}}</div>
+            <div class=" float-left" v-html="profile.values.content">{{profile.values.content}}</div>
             <div class=" float-right control-panel">
               <button @click="editProfile" class=" btn btn-sm">D</button>
             </div>

@@ -21,7 +21,7 @@
       <div class="form-row">
         <div class="col-md-6 mb-3">
           <label>Derece</label>
-          {{$v}}
+
           <input
             @blue="$v.agree.$touch()"
             v-model="agree" type="text" class="form-control"
