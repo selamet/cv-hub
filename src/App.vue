@@ -53,4 +53,5 @@
     transition: opacity .3s ease-out;
     opacity: 0;
   }
+
 </style>

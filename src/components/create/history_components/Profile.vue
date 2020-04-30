@@ -110,12 +110,20 @@
     font-family: sans-serif;
     font-weight: 400;
     border: none;
-    color: rgba(0,0,0,0.55);
-    width: 100px;
-    height: 45px;
+    font-size: 15px;
+    color: #565a74;
+    width: 85px;
+    height: 40px;
     border-radius: 4px;
-    border: 1px solid rgba(0,0,0,0.10);
-    //background-color: rgba(0,0,0,0.10);
+    background-color: #ecf1f5;
+    transition: all 0s;
+
+    &:hover {
+      background-color: transparent;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+    }
 
   }
 
@@ -124,11 +132,19 @@
     font-family: sans-serif;
     font-weight: 400;
     border: none;
-    color: rgba(0,0,0,0.55);
-    width: 100px;
-    height: 45px;
+    color: white;
+    width: 85px;
+    height: 40px;
+    font-size: 15px;
     border-radius: 4px;
-    background-color: rgba(0,0,0,0.09);
+    background-color: #3d64ff;
+    transition: all 0s;
+
+    &:hover {
+      background-color: transparent;
+      font-weight: 700;
+      cursor: pointer;
+    }
   }
 
   .p-style {

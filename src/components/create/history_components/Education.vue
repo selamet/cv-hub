@@ -1,7 +1,7 @@
 <template>
 
-  <div class="col-10 offset-1 pt-3  mt-5 shadow ">
-    <h3>Eğitim ve Nitelikler ({{educationData.educationList.length}}) </h3>
+  <div class="education">
+    <h3 class="education-title">Eğitim ve Nitelikler ({{educationData.educationList.length}}) </h3>
 
 
     <div v-if="educationData.educationList.length>0" class="show-education">
@@ -87,14 +87,18 @@
     </form>
 
     <div id="buttons">
-      <p class="text-right">
-        <button class="m-3 btn btn-outline-danger">Sil</button>
-        <button :disabled="saveEnabled" @click="addEducation(educationData.education)" class="m-3 btn btn-outline-info">Kaydet</button>
-      </p>
-      <p>
-        <button @click="addNewEducation()" class="btn btn-outline-dark btn-block col-md-8 offset-md-2">Başka bir eğitim
+      <div class="buttons-block">
+        <button class="education-button-remove">Sil</button>
+        <button :disabled="saveEnabled" @click="addEducation(educationData.education)" class="education-button-save">Kaydet</button>
+      </div>
+
+      <div class="others-block">
+        <button @click="addNewEducation()" class="education-button-other">Başka bir eğitim
           ekle
         </button>
+      </div>
+      <p>
+
       </p>
     </div>
 
@@ -176,6 +180,116 @@
 
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+  a, button, input, select, option {
+    outline: none;
+  }
+
+  body {
+    font-family: 'Muli', sans-serif;
+  }
+
+  .education {
+    width: 70%;
+    background-color: white;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 25px 45px;
+    -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.66);
+    -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.66);
+    box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.15);
+    border-radius: 4px;
+    margin-top: 100px;
+
+    &-title {
+      font-size: 22px;
+      letter-spacing: .6px;
+      color: rgb(0,0,0,0.8);
+    }
+
+    #buttons {
+      width: 100%;
+      height: 50px;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      .buttons-block {
+        width: 50%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .others-block {
+        width: 50%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+      }
+    }
+
+    &-button-remove {
+
+      margin-right: 5px;
+      font-family: sans-serif;
+      font-weight: 400;
+      border: none;
+      font-size: 15px;
+      color: #565a74;
+      width: 85px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: #ecf1f5;
+      transition: all 0s;
+
+      &:hover {
+        background-color: transparent;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+      }
+    }
+
+    &-button-save {
+
+      margin-left: 5px;
+      font-family: sans-serif;
+      font-weight: 400;
+      border: none;
+      color: white;
+      width: 85px;
+      height: 40px;
+      font-size: 15px;
+      border-radius: 4px;
+      background-color: #3d64ff;
+      transition: all 0s;
+
+      &:hover {
+        background-color: transparent;
+        font-weight: 700;
+        cursor: pointer;
+      }
+    }
+
+      &-button-other {
+
+        border: none;
+        background-color: #ecf1f5;
+        width: auto;
+        padding-left: 22.5px;
+        padding-right: 22.5px;
+        height: 40px;
+        font-size: 15px;
+        font-weight: 400;
+        font-family: sans-serif;
+        color: #565a74;
+
+      }
+  }
 
 </style>

@@ -16,7 +16,7 @@
       <app-achievement></app-achievement>
       <app-publication></app-publication>
     </div>
-  </div>
+
 
 
 </template>
@@ -76,7 +76,6 @@
       height: 417px;
       position: absolute;
       background-image: linear-gradient(90deg, #5d2d9f, #3446bf);
-
       top: 0;
       left: 0;
       z-index: -1;
@@ -87,7 +86,7 @@
       width: 100%;
       top: 417px;
       position: absolute;
-      background-color: #271f4f;
+      background-image: linear-gradient(90deg, #5d2d9f, #3446bf);
       height: 20px;
       left: 0;
       z-index: -1;
