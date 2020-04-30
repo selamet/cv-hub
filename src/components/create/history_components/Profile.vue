@@ -19,7 +19,7 @@
       <form class="profile-section" v-if="profile.formShow">
         <p class="p-style"> Kendinizden, hedeflerinizden ve başarılarınızdan bu kısımda bahsedin. Kendinizi en iyi ifade edeceğiniz kısım Profil kısmıdır. </p>
         <div class="profile-section-editor">
-          <label class="label">Açıklama</label>
+          <label class="sm-title">Açıklama</label>
           <vue-editor v-model="profile.values.content" :editor-toolbar="customToolbar"></vue-editor>
         </div>
 
@@ -84,6 +84,14 @@
     font-family: 'Muli', sans-serif;
   }
 
+  .sm-title {
+    color: #9aa4ae;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    text-transform: uppercase;
+  }
+
   .profile {
     width: 70%;
     background-color: white;
@@ -91,11 +99,12 @@
     display: flex;
     flex-wrap: wrap;
     margin: auto;
-    padding: 25px 45px;
+    padding: 45px 45px;
     -webkit-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.66);
     -moz-box-shadow: 0px 0px 17px 0px rgba(0,0,0,0.66);
     box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.15);
     border-radius: 4px;
+    //border-top: 3px solid #3d64ff;
 
     &-title {
       font-size: 22px;
