@@ -97,9 +97,7 @@
           ekle
         </button>
       </div>
-      <p>
 
-      </p>
     </div>
 
   </div>
@@ -181,6 +179,7 @@
 </script>
 
 <style lang="scss" scoped>
+  //---------------------------------
 
   a, button, input, select, option {
     outline: none;
@@ -199,6 +198,7 @@
   body {
     font-family: 'Muli', sans-serif;
   }
+  //---------------------------------
 
   .sm-title {
     color: #9aa4ae;
@@ -233,6 +233,7 @@
     padding: 0px;
 
   }
+  //---------------------------------
 
   .education {
     width: 70%;
