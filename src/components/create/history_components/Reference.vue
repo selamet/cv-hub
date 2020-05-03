@@ -1,11 +1,11 @@
 <template>
-  <div class="col-10 offset-1 pt-3  mt-5 shadow ">
+  <div class="reference">
 
-    <h3>Referanslar ({{referenceData.referenceList.length}})</h3>
+    <h3 class="reference-title">Referanslar ({{referenceData.referenceList.length}})</h3>
 
 
-    <div v-if="referenceData.referenceList.length>0" class="show-education">
-      <ul class="list-group">
+    <div v-if="referenceData.referenceList.length>0" class="reference-summary">
+      <ul class="list-group reference-summary-list">
         <li v-for="(ref,index) in referenceData.referenceList" class="list-group-item">
 
           <div class=" float-left">{{ref.person}} {{index}}</div>
@@ -18,26 +18,26 @@
     </div>
 
 
-    <form v-if="referenceData.formShow">
+    <form class="select-div" v-if="referenceData.formShow">
       <div class="form-row">
         <div class="col-md-6 mb-3">
-          <label>Şirket Adı</label>
-          <input v-model="referenceData.reference.company" type="text" class="form-control"
+          <label class="sm-title">Şirket Adı</label>
+          <input v-model="referenceData.reference.company" type="text" class="form-input"
                  required>
         </div>
         <div class="col-md-6 mb-3">
-          <label>İletişim Kişisi</label>
-          <input v-model="referenceData.reference.person" type="text" class="form-control"
+          <label class="sm-title">İletişim Kişisi</label>
+          <input v-model="referenceData.reference.person" type="text" class="form-input"
                  required>
         </div>
         <div class="col-md-6 mb-3">
-          <label>Telefon Numarası</label>
-          <input v-model="referenceData.reference.telephone" type="text" class="form-control"
+          <label class="sm-title">Telefon Numarası</label>
+          <input v-model="referenceData.reference.telephone" type="text" class="form-input"
                  required>
         </div>
         <div class="col-md-6 mb-3">
-          <label>E-posta Adresi</label>
-          <input v-model="referenceData.reference.email" type="text" class="form-control"
+          <label class="sm-title">E-posta Adresi</label>
+          <input v-model="referenceData.reference.email" type="text" class="form-input"
                  required>
         </div>
       </div>
@@ -45,16 +45,16 @@
 
 
     <div id="buttons">
-      <p class="text-right">
-        <button class="m-3 btn btn-outline-danger">Sil</button>
-        <button @click="addReference(referenceData.reference)" class="m-3 btn btn-outline-info">Kaydet</button>
-      </p>
-      <p>
-        <button @click="addNewReference()" class="btn btn-outline-dark btn-block col-md-8 offset-md-2">Başka Bir
+      <div class="buttons-block">
+        <button class="reference-button-remove">Sil</button>
+        <button @click="addReference(referenceData.reference)" class="reference-button-save">Kaydet</button>
+      </div>
+      <div class="others-block">
+        <button @click="addNewReference()" class="reference-button-other">Başka Bir
           Referans
           Ekle
         </button>
-      </p>
+      </div>
     </div>
 
   </div>
@@ -81,3 +81,196 @@
     }
   }
 </script>
+
+<style lang="scss" scoped>
+  //---------------------------------
+
+  a, button, input, select, option {
+    outline: none;
+    font-family: sans-serif;
+  }
+
+  select {
+  //-webkit-appearance: none;
+  //-moz-appearance: none;
+  //text-indent: 5px;
+  //text-overflow: '';
+    position: center;
+
+  }
+
+  body {
+    font-family: 'Muli', sans-serif;
+  }
+  //---------------------------------
+
+    .sm-title {
+      color: #9aa4ae;
+      font-family: sans-serif;
+      font-weight: 400;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+  .form-input {
+    padding-left: 15px;
+    width: 100%;
+    height: 45px;
+    border: 1.4px solid #eaeaea;
+    border-radius: 4px;
+
+  &:focus {
+     border: 2px solid #eaeaea;
+   }
+  }
+
+  .form-select {
+    appearance: none;
+    background-color: transparent;
+    width: 100%;
+    height: 45px;
+    border: 1.4px solid #eaeaea;
+    border-radius: 4px;
+  }
+
+  .select-div {
+    width: 100%;
+    padding-left: 0px;
+    margin-left: 0px;
+  }
+
+  .select-option {
+    padding: 0px;
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+
+  }
+
+  //----------------------------------
+
+    .reference {
+      width: 70%;
+      background-color: white;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 45px 45px;
+      -webkit-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.66);
+      -moz-box-shadow: 0px 0px 17px 0px rgba(0, 0, 0, 0.66);
+      box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.15);
+      border-radius: 4px;
+      margin-top: 100px;
+
+      &-title {
+        font-size: 22px;
+        letter-spacing: .6px;
+        color: rgb(0, 0, 0, 0.8);
+      }
+
+      &-summary {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 10px;
+        margin-bottom: 20px;
+
+        &-list {
+          width: 100%;
+        }
+      }
+
+      #buttons {
+        width: 100%;
+        height: 50px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .buttons-block {
+          width: 50%;
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+        }
+
+        .others-block {
+          width: 50%;
+          display: flex;
+          justify-content: flex-end;
+          align-items: center;
+        }
+      }
+
+      &-button-remove {
+
+        margin-right: 5px;
+        font-weight: 400;
+        border: none;
+        font-size: 15px;
+        color: #565a74;
+        width: 85px;
+        height: 40px;
+        border-radius: 4px;
+        background-color: #ecf1f5;
+        transition: all .3s;
+
+        &:hover {
+          background-color: transparent;
+          font-weight: 700;
+          cursor: pointer;
+          border: none;
+
+        }
+      }
+
+      &-button-save {
+
+        margin-left: 5px;
+        font-weight: 400;
+        border: none;
+        color: white;
+        width: 85px;
+        height: 40px;
+        font-size: 15px;
+        border-radius: 4px;
+        background-color: #3d64ff;
+        transition: all .3s;
+
+        &:hover {
+          background-color: transparent;
+          font-weight: 700;
+          cursor: pointer;
+          color: #565a74;
+        }
+      }
+
+      &-button-other {
+
+        border: none;
+        background-color: #ecf1f5;
+        width: auto;
+        border-radius: 4px;
+        padding-left: 22.5px;
+        padding-right: 22.5px;
+        height: 40px;
+        font-size: 15px;
+        font-weight: 400;
+        color: #565a74;
+
+        transition: all .3s;
+
+        &:hover {
+          background-color: transparent;
+          cursor: pointer;
+          color: #565a74;
+        }
+      }
+    }
+</style>

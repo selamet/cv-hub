@@ -18,13 +18,13 @@
     <form class="select-div" v-if="languageData.formShow">
       <div class="select-option">
         <div class="col-md-6 mb-3 pl-0">
-          <label>Dil</label>
-          <input v-model="languageData.language.name" type="text" class="form-control" placeholder="Örn. İspanyolca"
+          <label class="sm-title">Dil</label>
+          <input v-model="languageData.language.name" type="text" class="form-input" placeholder="Örn. İspanyolca"
                  required>
         </div>
         <div class="col-md-6 mb-3 pr-0">
-          <label>Seviye</label>
-          <select v-model="languageData.language.level" class="form-control ">
+          <label class="sm-title">Seviye</label>
+          <select v-model="languageData.language.level" class="form-select ">
             <option disabled selected>Seç</option>
             <option :value="1">1</option>
             <option :value="2">2</option>

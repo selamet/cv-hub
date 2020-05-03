@@ -69,6 +69,7 @@
     position: relative;
     height: auto;
     z-index: 0;
+    padding-bottom: 100px;
 
     &:before {
       content: '';
